@@ -1,0 +1,1031 @@
+﻿{
+  "Config": {
+    "DateTimeFormat": "MM/dd/yyyy",
+    "LineWidth": 327
+  },
+  "InputMap": [
+    {
+      "Description": "Submission Year",
+      "Name": "SubYear",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "State Territory",
+      "Name": "StaTerr",
+      "Width": 2,
+      "Value": null,
+      "Type": "string"
+    },
+    {
+      "Description": "Report ID",
+      "Name": "RptID",
+      "Width": 12,
+      "Value": null,
+      "Type": "string"
+    },
+    {
+      "Description": "Child ID",
+      "Name": "ChID",
+      "Width": 12,
+      "Value": null,
+      "Type": "string"
+    },
+    {
+      "Description": "County Of Report",
+      "Name": "RptCnty",
+      "Width": 5,
+      "Value": null,
+      "Type": "string"
+    },
+    {
+      "Description": "Derived: State/County FIPS Code",
+      "Name": "RptFIPS",
+      "Width": 5,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Report Date",
+      "Name": "RptDt",
+      "Width": 11,
+      "Value": null,
+      "Type": "datetime"
+    },
+	{
+		"Description": "Report Time",
+		"Name": "RptTm",
+		"Width": 5,
+		"Value": null,
+		"Type": "string"
+	},	
+    {
+      "Description": "Investigation Start Date",
+      "Name": "InvDate",
+      "Width": 11,
+      "Value": null,
+      "Type": "datetime"
+    },
+	{
+	  "Description": "Investigation Contact Time",
+	  "Name": "InvStrTm",
+	  "Width": 5,
+	  "Value": null,
+	  "Type": "string"
+	 },
+    {
+      "Description": "Report Source",
+      "Name": "RptSrc",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Report Disposition",
+      "Name": "RptDisp",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Report Disposition Date",
+      "Name": "RpDispDt",
+      "Width": 11,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Notifications",
+      "Name": "Notifs",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Child Age At Report",
+      "Name": "ChAge",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Child Sex",
+      "Name": "ChSex",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Child Race American Indian or Alaska Native",
+      "Name": "ChRacAI",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Child Race Asian",
+      "Name": "ChRacAs",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Child Race Black or African American",
+      "Name": "ChRacBl",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Child Race Hawaiian or Other Pacific Islander",
+      "Name": "ChRacNH",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Child Race White",
+      "Name": "ChRacWh",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Child Race Undetermined",
+      "Name": "ChRacUd",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Child Ethnicity",
+      "Name": "CEthn",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Living Arrangement",
+      "Name": "ChLvng",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Military Family Member",
+      "Name": "ChMil",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Prior Victim",
+      "Name": "ChPrior",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Maltreatment-1 Type",
+      "Name": "ChMal1",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Maltreatment-1 Disposition Level",
+      "Name": "Mal1Lev",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Maltreatment-2 Type",
+      "Name": "ChMal2",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Maltreatment-2 Disposition Level",
+      "Name": "Mal2Lev",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Maltreatment-3 Type",
+      "Name": "ChMal3",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Maltreatment-3 Disposition Level",
+      "Name": "Mal3Lev",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Maltreatment-4 Type",
+      "Name": "ChMal4",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Maltreatment-4 Disposition Level",
+      "Name": "Mal4Lev",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Maltreatment Death",
+      "Name": "MalDeath",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Alcohol Abuse-Child",
+      "Name": "CdAlc",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Drug Abuse-Child",
+      "Name": "CdDrug",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Mental Retardation-Child",
+      "Name": "CdRtrd",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Emotionaly Disturbed-Child",
+      "Name": "CdEmotnl",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Visually Or Hearing Impared-Child",
+      "Name": "CdVisual",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Learning Disability-Child",
+      "Name": "CdLearn",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Physically Disabled-Child",
+      "Name": "CdPhys",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Behavior Problem-Child",
+      "Name": "CdBehav",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Other Medical Condition-Child",
+      "Name": "CdMedicl",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Alcohol Abuse-Caretaker(s)",
+      "Name": "FCAlc",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Drug Abuse-Caretaker(s)",
+      "Name": "FCDrug",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Mental Retardation-Caretaker(s)",
+      "Name": "FCRtrd",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Emotionally Disturbed-Caretaker(s)",
+      "Name": "FCEmotnl",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Visually or Hearing Impaired-Caretaker(s)",
+      "Name": "FCVisual",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Learning Disability-Caretaker(s)",
+      "Name": "FCLearn",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Physically Disabled-Caretaker(s)",
+      "Name": "FCPhys",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Other Medical Condition-Caretaker(s)",
+      "Name": "FCMedicl",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Domestic Violence",
+      "Name": "FCViol",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Inadequate Housing",
+      "Name": "FCHouse",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Financial Problem",
+      "Name": "FCMoney",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Public Assistance",
+      "Name": "FCPublic",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Post Investigation Services",
+      "Name": "PostServ",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Service Date",
+      "Name": "ServDate",
+      "Width": 11,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Family Support Services",
+      "Name": "FamSup",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Family Preservation Services",
+      "Name": "FamPres",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Foster Care Services",
+      "Name": "FosterCr",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Date",
+      "Name": "RmvDate",
+      "Width": 11,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Juvenile Court Petition",
+      "Name": "JuvPet",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Petition Date",
+      "Name": "PetDate",
+      "Width": 11,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Court-Appointed Representative",
+      "Name": "CoChRep",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Adoption Services",
+      "Name": "Adopt",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Case Management Services",
+      "Name": "CaseMang",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Counseling Services",
+      "Name": "Counsel",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Day Care Services-Child",
+      "Name": "DayCare",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Educational and Training Services",
+      "Name": "Educatn",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Employment Services",
+      "Name": "Employ",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Family Planning Services",
+      "Name": "FamPlan",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Health-Related and Home Health Services",
+      "Name": "Health",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Home-Based Services",
+      "Name": "Homebase",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Housing Services",
+      "Name": "Housing",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Independent and Transitional Living Svcs",
+      "Name": "TransLiv",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Information and Referral Services",
+      "Name": "InfoRef",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Legal Services",
+      "Name": "Legal",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Mental Health Services",
+      "Name": "MentHlth",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Pregnancy and Parenting Services",
+      "Name": "PregPar",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Respite Care Services",
+      "Name": "Respite",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Special Services-Disabled",
+      "Name": "SSDisabl",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Special Services-Juvenile Deliquent",
+      "Name": "SSDelinq",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Substance Abuse Services",
+      "Name": "SubAbuse",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Transportation Services",
+      "Name": "Transprt",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Other Services",
+      "Name": "OtherSv",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 ID",
+      "Name": "Per1ID",
+      "Width": 12,
+      "Value": null,
+      "Type": "string"
+    },
+    {
+      "Description": "Perpetrator-1 Relationship",
+      "Name": "Per1Rel",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 As A Parent",
+      "Name": "Per1Prnt",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 As A Caretaker",
+      "Name": "Per1Cr",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Age at Report",
+      "Name": "Per1Age",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Sex",
+      "Name": "Per1Sex",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Race American Indian or Alaska Native",
+      "Name": "P1RacAI",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Race Asian",
+      "Name": "P1RacAs",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Race Black or African American",
+      "Name": "P1RacBl",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Race Hawaiian or Other Pacific Islander",
+      "Name": "P1RacNH",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Race White",
+      "Name": "P1RacWh",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Race Undetermined",
+      "Name": "P1RacUd",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Ethnicity",
+      "Name": "Per1Ethn",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Military Member",
+      "Name": "Per1Mil",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Prior Abuser",
+      "Name": "Per1Pior",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Maltreatment-1",
+      "Name": "Per1Mal1",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Maltreatment-2",
+      "Name": "Per1Mal2",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Maltreatment-3",
+      "Name": "Per1Mal3",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-1 Maltreatment-4",
+      "Name": "Per1Mal4",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 ID",
+      "Name": "Per2ID",
+      "Width": 12,
+      "Value": null,
+      "Type": "string"
+    },
+    {
+      "Description": "Perpetrator-2 Relationship",
+      "Name": "Per2Rel",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 As A Parent",
+      "Name": "Per2Prnt",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 As A Caretaker",
+      "Name": "Per2Cr",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Age at Report",
+      "Name": "Per2Age",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Sex",
+      "Name": "Per2Sex",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Race American Indian or Alaska Native",
+      "Name": "P2RacAI",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Race Asian",
+      "Name": "P2RacAs",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Race Black or African American",
+      "Name": "P2RacBl",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Race Hawaiian or Other Pacific Islander",
+      "Name": "P2RacNH",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Race White",
+      "Name": "P2RacWh",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Race Undetermined",
+      "Name": "P2RacUd",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Ethnicity",
+      "Name": "Per2Ethn",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Military Member",
+      "Name": "Per2Mil",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Prior Abuser",
+      "Name": "Per2Pior",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Maltreatment-1",
+      "Name": "Per2Mal1",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Maltreatment-2",
+      "Name": "Per2Mal2",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Maltreatment-3",
+      "Name": "Per2Mal3",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-2 Maltreatment-4",
+      "Name": "Per2Mal4",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 ID",
+      "Name": "Per3ID",
+      "Width": 12,
+      "Value": null,
+      "Type": "string"
+    },
+    {
+      "Description": "Perpetrator-3 Relationship",
+      "Name": "Per3Rel",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 As A Parent",
+      "Name": "Per3Prnt",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 As A Caretaker",
+      "Name": "Per3Cr",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Age at Report",
+      "Name": "Per3Age",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Sex",
+      "Name": "Per3Sex",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Race American Indian or Alaska Native",
+      "Name": "P3RacAI",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Race Asian",
+      "Name": "P3RacAs",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Race Black or African American",
+      "Name": "P3RacBl",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Race Hawaiian or Other Pacific Islander",
+      "Name": "P3RacNH",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Race White",
+      "Name": "P3RacWh",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Race Undetermined",
+      "Name": "P3RacUd",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Ethnicity",
+      "Name": "Per3Ethn",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Military Member",
+      "Name": "Per3Mil",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Prior Abuser",
+      "Name": "Per3Pior",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Maltreatment-1",
+      "Name": "Per3Mal1",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Maltreatment-2",
+      "Name": "Per3Mal2",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Maltreatment-3",
+      "Name": "Per3Mal3",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Perpetrator-3 Maltreatment-4",
+      "Name": "Per3Mal4",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "AFCARS ID",
+      "Name": "AFCARSIDByte",
+      "Width": 12,
+      "Value": null,
+      "Type": "byte"
+    },
+	{
+	  "Description": "Date of Discharge from Foster Care",
+	  "Name": "FCDchDt",
+	  "Width": 11,
+	  "Value": null,
+	  "Type": "datetime"
+	},
+    {
+      "Description": "Derived: Child is a Victim on This Report",
+      "Name": "RptVictim",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    }
+
+  ]
+}

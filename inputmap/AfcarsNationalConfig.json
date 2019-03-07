@@ -1,0 +1,729 @@
+{
+  "Config": {
+    "DateTimeFormat": "MM/dd/yyyy",
+    "LineWidth": 273
+  },
+  "InputMap": [
+    {
+      "Description": "The federal fiscal year covered by this dataset",
+      "Name": "DataYear",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "The version number for this dataset",
+      "Name": "Version",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "State",
+      "Name": "STATE",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "State Two-Character Code",
+      "Name": "St",
+      "Width": 2,
+      "Value": null,
+      "Type": "string"
+    },
+    {
+      "Description": "Reporting Period End Date: Year",
+      "Name": "REPDATYR",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Reporting Period End Date: Month",
+      "Name": "REPDATMO",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "FIPS Code for the County which has responsibility for the Case",
+      "Name": "FIPSCODE",
+      "Width": 5,
+      "Value": null,
+      "Type": "string"
+    },
+    {
+      "Description": "Record Number (not unique) (aka AFCARSID)",
+      "Name": "RECNUMBR",
+      "Width": 12,
+      "Value": null,
+      "Type": "string"
+    },
+    {
+      "Description": "Child Sex",
+      "Name": "SEX",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "AmericanIndian/AK Native",
+      "Name": "AMIAKN",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Asian",
+      "Name": "ASIAN",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Black/African American",
+      "Name": "BLKAFRAM",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Hawaiian/Pacific Islander",
+      "Name": "HAWAIIPI",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "White",
+      "Name": "WHITE",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Unable to Determin Race",
+      "Name": "UNTODETM",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Hispanic Origin",
+      "Name": "HISORGIN",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Diagnosed Disability",
+      "Name": "CLINDIS",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Mental Retardation",
+      "Name": "MR",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Visaully or Hearing Impaired",
+      "Name": "VISHEAR",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Physically Disabled",
+      "Name": "PHYDIS",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Emotionally Disturbed",
+      "Name": "DSMIII",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Other Diagnosed Condition",
+      "Name": "OTHERMED",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Ever adopted",
+      "Name": "EVERADPT",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Age at adoption",
+      "Name": "AGEADOPT",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Total Number of Removals",
+      "Name": "TOTALREM",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Number of Placement Settings During the Current FC Episode",
+      "Name": "NUMPLEP",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Manner",
+      "Name": "MANREM",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Physical Abuse",
+      "Name": "PHYABUSE",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Sexual Abuse",
+      "Name": "SEXABUSE",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Neglect",
+      "Name": "NEGLECT",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Alcohol Abuse Parent",
+      "Name": "AAPARENT",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Drug Abuse Parent",
+      "Name": "DAPARENT",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Alcohol Abuse Child",
+      "Name": "AACHILD",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Drug Abuse Child",
+      "Name": "DACHILD",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Child Disability",
+      "Name": "CHILDIS",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Child Behavior Problem",
+      "Name": "CHBEHPRB",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Parent Death",
+      "Name": "PRTSDIED",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Parent Incarceration",
+      "Name": "PRTSJAIL",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Caretaker Inability Cope",
+      "Name": "NOCOPE",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Abandonment",
+      "Name": "ABANDMNT",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Relinquishment",
+      "Name": "RELINQSH",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Removal Reason-Inthisequate Housing",
+      "Name": "HOUSING",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Current Placement Setting",
+      "Name": "CURPLSET",
+      "Width": 2,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Out Of State Placement",
+      "Name": "PLACEOUT",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Most Recent Case Plan Goal",
+      "Name": "CASEGOAL",
+      "Width": 2,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Principal Caretaker Family Structure",
+      "Name": "CTKFAMST",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "1st Principal Caretaker Year Of Birth",
+      "Name": "CTK1YR",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "2nd Principal Caretaker Year Of Birth",
+      "Name": "CTK2YR",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Foster Family Structure",
+      "Name": "FOSFAMST",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "1st Foster Caretaker Year Of Birth",
+      "Name": "FCCTK1YR",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "2nd Foster Caretaker Year Of Birth",
+      "Name": "FCCTK2YR",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "1st Foster Caretaker Am Indian/AK Native",
+      "Name": "RF1AMAKN",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "1st Foster Caretaker Asian",
+      "Name": "RF1ASIAN",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "1st Foster Caretaker Black/African American",
+      "Name": "RF1BLKAA",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "1st Foster Caretaker Hawaii/Pacific Islander",
+      "Name": "RF1NHOPI",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "1st Foster Caretaker White",
+      "Name": "RF1WHITE",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "1st Foster Caretaker Unable To Determine Race",
+      "Name": "RF1UTOD",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "1st Foster Caretaker Hispanic Origin",
+      "Name": "HOFCCTK1",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "2nd Foster Caretaker Am Indian/AK Native",
+      "Name": "RF2AMAKN",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "2nd Foster Caretaker Asian",
+      "Name": "RF2ASIAN",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "2nd Foster Caretaker Black/African American",
+      "Name": "RF2BLKAA",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "2nd Foster Caretaker Hawaii/Pacific Islander",
+      "Name": "RF2NHOPI",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "2nd Foster Caretaker White",
+      "Name": "RF2WHITE",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "2nd Foster Caretaker Unable To Determine Race",
+      "Name": "RF2UTOD",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "2nd Foster Caretaker Hispanic Origin",
+      "Name": "HOFCCTK2",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Discharge Reason",
+      "Name": "DISREASN",
+      "Width": 2,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Title IV-E Foster Care Payments",
+      "Name": "IVEFC",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Title IV-E adoption Assistance",
+      "Name": "IVEAA",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Title IV-A AFDC Payment",
+      "Name": "IVAAFDC",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Title IV-D Child Support Funds",
+      "Name": "IVDCHSUP",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Title XIX",
+      "Name": "XIXMEDCD",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "SSI Or Social Security Act Benefits",
+      "Name": "SSIOTHER",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Only State Or Other Support",
+      "Name": "NOA",
+      "Width": 1,
+      "Value": -2,
+      "Type": "int"
+    },
+    {
+      "Description": "Monthly FC Payment",
+      "Name": "FCMNTPAY",
+      "Width": 5,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Date of Birth of the Foster Child",
+      "Name": "DOB",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Date of First Removal",
+      "Name": "Rem1Dt",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Discharge Date For Previous Removal",
+      "Name": "DLstFCDt",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Date of Latest Removal",
+      "Name": "LatRemDt",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Begin Date for Current Placement Setting",
+      "Name": "CurSetDt",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Date of Discharge from Foster Care",
+      "Name": "DoDFCDt",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Date of the mothers termination of parental rights",
+      "Name": "TPRMomDt",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Date of the fathers termination of parental rights",
+      "Name": "TPRDadDt",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Date of second parents loss of parental rights",
+      "Name": "TPRDate",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Periodic Review Date",
+      "Name": "PedRevDt",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Removal Transaction Date",
+      "Name": "RemTrnDt",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Date that the discharge was recorded",
+      "Name": "DoDTrnDt",
+      "Width": 10,
+      "Value": null,
+      "Type": "datetime"
+    },
+    {
+      "Description": "Length (days) since latest removal date",
+      "Name": "LatRemLOS",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Length (days) in Current Placement Setting",
+      "Name": "SettingLOS",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Length (days) of previous FC stay",
+      "Name": "PreviousLOS",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Total days stay in FC, all episodes",
+      "Name": "LifeLOS",
+      "Width": 4,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Age on the first day of the fiscal year (Oct 1)",
+      "Name": "AgeAtStart",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Age of Child at the Most Recent Removal",
+      "Name": "AgeAtLatRem",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Age of Child at the End of the FFY, or at Exit FC",
+      "Name": "AgeAtEnd",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "In FC at the beginning of the FFY",
+      "Name": "InAtStart",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "In FC at the end of the fiscal year",
+      "Name": "InAtEnd",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Entered FC during the fiscal year",
+      "Name": "Entered",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Dischared from FC during FFY",
+      "Name": "Exited",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "In at start or entered FC during FY",
+      "Name": "Served",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Child is waiting for adoption",
+      "Name": "IsWaiting",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Both parents have relinquished parental rights",
+      "Name": "IsTPR",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Exited to Emancipation and Age >= 18",
+      "Name": "AgedOut",
+      "Width": 1,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Derived Race Variable",
+      "Name": "RaceEthn",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    },
+    {
+      "Description": "Rural Urban Continuum Code Version 2013",
+      "Name": "RU13",
+      "Width": 2,
+      "Value": null,
+      "Type": "int"
+    }
+  ]
+}

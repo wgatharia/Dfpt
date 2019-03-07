@@ -1,0 +1,80 @@
+{
+    "OutputMap": [
+        {
+            "Name": "DataSourceType",
+            "Map": "DataSourceType"
+        },
+        {
+            "Name": "StateJurisdictionID",
+            "Map": "StateJurisdictionID"
+        },
+        {
+            "Name": "StateNationalCode",
+            "Map": "StateNationalCode"
+        },
+        {
+            "Name": "FiscalYear",
+            "Map": "FiscalYear"
+        },
+        {
+            "Name": "PeriodCode",
+            "Map": "PeriodCode"
+        },
+        {
+            "Name": "DQ_DOBgtDtDisch",
+            "Map": "DQ_DOBgtDtDischPct"
+        },
+        {
+            "Name": "DQ_DOBgtDtLatRem",
+            "Map": "DQ_DOBgtDtLatRemPct"
+        },
+        {
+            "Name": "DQ_Dropped",
+            "Map": "DQ_DroppedPct"
+        },
+        {
+            "Name": "DQ_DtDischEqDtLatRem",
+            "Map": "DQ_DtDischEqDtLatRemPct"
+        },
+        {
+            "Name": "DQ_DtDischLtDtLatRem",
+            "Map": "DQ_DtDischLtDtLatRemPct"
+        },
+        {
+            "Name": "DQ_gt21DOBtoDtDisch",
+            "Map": "DQ_gt21DOBtoDtDischPct"
+        },
+        {
+            "Name": "DQ_gt21DOBtoDtLatRem",
+            "Map": "DQ_gt21DOBtoDtLatRemPct"
+        },
+        {
+            "Name": "DQ_gt21DtDischtoDtLatRem",
+            "Map": "DQ_gt21DtDischtoDtLatRemPct"
+        },
+        {
+            "Name": "DQ_IDNoMatchNext6Mo",
+            "Map": "DQ_IDNoMatchNext6MoPct"
+        },
+        {
+            "Name": "DQ_missDisreasn",
+            "Map": "DQ_missDisreasnPct"
+        },
+        {
+            "Name": "DQ_missDOB",
+            "Map": "DQ_missDOBPct"
+        },
+        {
+            "Name": "DQ_missDtLatRem",
+            "Map": "DQ_missDtLatRemPct"
+        },
+        {
+            "Name": "DQ_missNumPlep",
+            "Map": "DQ_missNumPlepPct"
+        },
+        {
+            "Name": "DQ_totalrem1",
+            "Map": "DQ_totalrem1Pct"
+        }
+    ]
+}

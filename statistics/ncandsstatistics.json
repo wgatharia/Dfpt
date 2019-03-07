@@ -1,0 +1,32 @@
+{
+    "OutputMap": [
+        {
+            "Name": "DataSourceType",
+            "Map": "DataSourceType"
+        },
+        {
+            "Name": "StateJurisdictionID",
+            "Map": "StateJurisdictionID"
+        },
+        {
+            "Name": "StateNationalCode",
+            "Map": "StateNationalCode"
+        },
+        {
+            "Name": "FiscalYear",
+            "Map": "FiscalYear"
+        },
+        {
+            "Name": "PeriodCode",
+            "Map": "PeriodCode"
+        },
+        {
+            "Name": "DQ_NCANDS_MissingAgePct",
+            "Map": "DQ_NCANDS_MissingAgePct"
+        },
+        {
+            "Name": "DQ_NCANDS_HasIDPct",
+            "Map": "DQ_NCANDS_HasIDPct"
+        }
+    ]
+}

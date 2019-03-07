@@ -1,0 +1,212 @@
+{
+    "Jurisdictions": [
+        {
+            "JurisdictionCode": "AL",
+            "JurisdictionId": "01000"
+        },
+        {
+            "JurisdictionCode": "AK",
+            "JurisdictionId": "02000"
+        },
+        {
+            "JurisdictionCode": "AZ",
+            "JurisdictionId": "04000"
+        },
+        {
+            "JurisdictionCode": "AR",
+            "JurisdictionId": "05000"
+        },
+        {
+            "JurisdictionCode": "CA",
+            "JurisdictionId": "06000"
+        },
+        {
+            "JurisdictionCode": "CO",
+            "JurisdictionId": "08000"
+        },
+        {
+            "JurisdictionCode": "CT",
+            "JurisdictionId": "09000"
+        },
+        {
+            "JurisdictionCode": "DE",
+            "JurisdictionId": "10000"
+        },
+        {
+            "JurisdictionCode": "DC",
+            "JurisdictionId": "11000"
+        },
+        {
+            "JurisdictionCode": "FL",
+            "JurisdictionId": "12000"
+        },
+        {
+            "JurisdictionCode": "GA",
+            "JurisdictionId": "13000"
+        },
+        {
+            "JurisdictionCode": "HI",
+            "JurisdictionId": "15000"
+        },
+        {
+            "JurisdictionCode": "ID",
+            "JurisdictionId": "16000"
+        },
+        {
+            "JurisdictionCode": "IL",
+            "JurisdictionId": "17000"
+        },
+        {
+            "JurisdictionCode": "IN",
+            "JurisdictionId": "18000"
+        },
+        {
+            "JurisdictionCode": "IA",
+            "JurisdictionId": "19000"
+        },
+        {
+            "JurisdictionCode": "KS",
+            "JurisdictionId": "20000"
+        },
+        {
+            "JurisdictionCode": "KY",
+            "JurisdictionId": "21000"
+        },
+        {
+            "JurisdictionCode": "LA",
+            "JurisdictionId": "22000"
+        },
+        {
+            "JurisdictionCode": "ME",
+            "JurisdictionId": "23000"
+        },
+        {
+            "JurisdictionCode": "MD",
+            "JurisdictionId": "24000"
+        },
+        {
+            "JurisdictionCode": "MA",
+            "JurisdictionId": "25000"
+        },
+        {
+            "JurisdictionCode": "MI",
+            "JurisdictionId": "26000"
+        },
+        {
+            "JurisdictionCode": "MN",
+            "JurisdictionId": "27000"
+        },
+        {
+            "JurisdictionCode": "MS",
+            "JurisdictionId": "28000"
+        },
+        {
+            "JurisdictionCode": "MO",
+            "JurisdictionId": "29000"
+        },
+        {
+            "JurisdictionCode": "MT",
+            "JurisdictionId": "30000"
+        },
+        {
+            "JurisdictionCode": "NE",
+            "JurisdictionId": "31000"
+        },
+        {
+            "JurisdictionCode": "NV",
+            "JurisdictionId": "32000"
+        },
+        {
+            "JurisdictionCode": "NH",
+            "JurisdictionId": "33000"
+        },
+        {
+            "JurisdictionCode": "NJ",
+            "JurisdictionId": "34000"
+        },
+        {
+            "JurisdictionCode": "NM",
+            "JurisdictionId": "35000"
+        },
+        {
+            "JurisdictionCode": "NY",
+            "JurisdictionId": "36000"
+        },
+        {
+            "JurisdictionCode": "NC",
+            "JurisdictionId": "37000"
+        },
+        {
+            "JurisdictionCode": "ND",
+            "JurisdictionId": "38000"
+        },
+        {
+            "JurisdictionCode": "OH",
+            "JurisdictionId": "39000"
+        },
+        {
+            "JurisdictionCode": "OK",
+            "JurisdictionId": "40000"
+        },
+        {
+            "JurisdictionCode": "OR",
+            "JurisdictionId": "41000"
+        },
+        {
+            "JurisdictionCode": "PA",
+            "JurisdictionId": "42000"
+        },
+        {
+            "JurisdictionCode": "RI",
+            "JurisdictionId": "44000"
+        },
+        {
+            "JurisdictionCode": "SC",
+            "JurisdictionId": "45000"
+        },
+        {
+            "JurisdictionCode": "SD",
+            "JurisdictionId": "46000"
+        },
+        {
+            "JurisdictionCode": "TN",
+            "JurisdictionId": "47000"
+        },
+        {
+            "JurisdictionCode": "TX",
+            "JurisdictionId": "48000"
+        },
+        {
+            "JurisdictionCode": "UT",
+            "JurisdictionId": "49000"
+        },
+        {
+            "JurisdictionCode": "VT",
+            "JurisdictionId": "50000"
+        },
+        {
+            "JurisdictionCode": "VA",
+            "JurisdictionId": "51000"
+        },
+        {
+            "JurisdictionCode": "WA",
+            "JurisdictionId": "53000"
+        },
+        {
+            "JurisdictionCode": "WV",
+            "JurisdictionId": "54000"
+        },
+        {
+            "JurisdictionCode": "WI",
+            "JurisdictionId": "55000"
+        },
+        {
+            "JurisdictionCode": "WY",
+            "JurisdictionId": "56000"
+        },
+        {
+            "JurisdictionCode": "PR",
+            "JurisdictionId": "72000"
+        }
+    ]
+}

@@ -1,0 +1,587 @@
+{
+    "OutputMap": [
+        {
+            "Name": "AGEADOPT",
+            "Map": "AdoptionAgeRangeID"
+        },
+        {
+            "Name": "FIPSCODE",
+            "Map": "AgencyJurisdictionID"
+        },
+        {
+            "Name": "DOB",
+            "Map": "BirthDate"
+        },
+        {
+            "Name": "CLINDIS",
+            "Map": "DiagnosedDisabilityID"
+        },
+        {
+            "Name": "DoDFCDt",
+            "Map": "DischargeDate"
+        },
+        {
+            "Name": "DISREASN",
+            "Map": "DischargeReasonID"
+        },
+        {
+            "Name": "DoDTrnDt",
+            "Map": "DischargeTransactionDate"
+        },
+        {
+            "Name": "DQ_DOBgtDtDisch",
+            "Map": "DQ_DOBgtDtDisch"
+        },
+        {
+            "Name": "DQ_DOBgtDtLatRem",
+            "Map": "DQ_DOBgtDtLatRem"
+        },
+        {
+            "Name": "DQ_Dropped",
+            "Map": "DQ_Dropped"
+        },
+        {
+            "Name": "DQ_DtDischEqDtLatRem",
+            "Map": "DQ_DtDischEqDtLatRem"
+        },
+        {
+            "Name": "DQ_DtDischLtDtLatRem",
+            "Map": "DQ_DtDischLtDtLatRem"
+        },
+        {
+            "Name": "DQ_gt21DOBtoDtDisch",
+            "Map": "DQ_gt21DOBtoDtDisch"
+        },
+        {
+            "Name": "DQ_gt21DOBtoDtLatRem",
+            "Map": "DQ_gt21DOBtoDtLatRem"
+        },
+        {
+            "Name": "DQ_gt21DtDischtoDtLatRem",
+            "Map": "DQ_gt21DtDischtoDtLatRem"
+        },
+        {
+            "Name": "DQ_IDNoMatchNext6Mo",
+            "Map": "DQ_IDNoMatchNext6Mo"
+        },
+        {
+            "Name": "DQ_missDisreasn",
+            "Map": "DQ_missDisreasn"
+        },
+        {
+            "Name": "DQ_missDOB",
+            "Map": "DQ_missDOB"
+        },
+        {
+            "Name": "DQ_missDtLatRem",
+            "Map": "DQ_missDtLatRem"
+        },
+        {
+            "Name": "DQ_missNumPlep",
+            "Map": "DQ_missNumPlep"
+        },
+        {
+            "Name": "DQ_totalrem1",
+            "Map": "DQ_totalrem1"
+        },
+        {
+            "Name": "TPRDadDt",
+            "Map": "FatherTPRDate"
+        },
+        {
+            "Name": "Rem1Dt",
+            "Map": "FirstRemovalDate"
+        },
+        {
+            "Name": "FCCTK1YR",
+            "Map": "FosterCareTaker1BirthYear"
+        },
+        {
+            "Name": "FCCTK2YR",
+            "Map": "FosterCareTaker2BirthYear"
+        },
+        {
+            "Name": "FOSFAMST",
+            "Map": "FosterFamilyStructureID"
+        },
+        {
+            "Name": "SEX",
+            "Map": "GenderCode"
+        },
+        {
+            "Name": "IVEAA",
+            "Map": "IsAdoptionSubsidyPaymentIID"
+        },
+        {
+            "Name": "IVAAFDC",
+            "Map": "IsAFDCPaymentID"
+        },
+        {
+            "Name": "AMIAKN",
+            "Map": "IsAmerIndOrAKNativeID"
+        },
+        {
+            "Name": "ASIAN",
+            "Map": "IsAsianID"
+        },
+        {
+            "Name": "BLKAFRAM",
+            "Map": "IsBlkAfAmerID"
+        },
+        {
+            "Name": "IVDCHSUP",
+            "Map": "IsChildSupportPaymentID"
+        },
+        {
+            "Name": "DSMIII",
+            "Map": "IsEmoDisturbID"
+        },
+        {
+            "Name": "Entered",
+            "Map": "IsEnteredFosterCareDuringFiscalID"
+        },
+        {
+            "Name": "EVERADPT",
+            "Map": "IsEverAdoptedID"
+        },
+        {
+            "Name": "Exited",
+            "Map": "IsExitedFosterCareDuringFiscalID"
+        },
+        {
+            "Name": "RF1AMAKN",
+            "Map": "IsFCT1AmerIndOrAKNativeID"
+        },
+        {
+            "Name": "RF1ASIAN",
+            "Map": "IsFCT1AsianID"
+        },
+        {
+            "Name": "RF1BLKAA",
+            "Map": "IsFCT1BlkAfAmerID"
+        },
+        {
+            "Name": "RF1NHOPI",
+            "Map": "IsFCT1HIOrPIID"
+        },
+        {
+            "Name": "HOFCCTK1",
+            "Map": "IsFCT1HisOrginID"
+        },
+        {
+            "Name": "RF1UTOD",
+            "Map": "IsFCT1UndRaceID"
+        },
+        {
+            "Name": "RF1WHITE",
+            "Map": "IsFCT1WhiteID"
+        },
+        {
+            "Name": "RF2AMAKN",
+            "Map": "IsFCT2AmerIndOrAKNativeID"
+        },
+        {
+            "Name": "RF2ASIAN",
+            "Map": "IsFCT2AsianID"
+        },
+        {
+            "Name": "RF2BLKAA",
+            "Map": "IsFCT2BlkAfAmerID"
+        },
+        {
+            "Name": "RF2NHOPI",
+            "Map": "IsFCT2HIOrPIID"
+        },
+        {
+            "Name": "HOFCCTK2",
+            "Map": "IsFCT2HisOrginID"
+        },
+        {
+            "Name": "RF2UTOD",
+            "Map": "IsFCT2UndRaceID"
+        },
+        {
+            "Name": "RF2WHITE",
+            "Map": "IsFCT2WhiteID"
+        },
+        {
+            "Name": "IVEFC",
+            "Map": "IsFosterCarePaymentID"
+        },
+        {
+            "Name": "HAWAIIPI",
+            "Map": "IsHIOrPIID"
+        },
+        {
+            "Name": "HISORGIN",
+            "Map": "IsHisOrginID"
+        },
+        {
+            "Name": "InAtEnd",
+            "Map": "IsInFosterCareAtFiscalEndID"
+        },
+        {
+            "Name": "InAtStart",
+            "Map": "IsInFosterCareAtFiscalStartID"
+        },
+        {
+            "Name": "MR",
+            "Map": "IsMentalRetardationID"
+        },
+        {
+            "Name": "OTHERMED",
+            "Map": "IsOtherDiagCondID"
+        },
+        {
+            "Name": "IsTPR",
+            "Map": "IsParentalRightsTermID"
+        },
+        {
+            "Name": "PHYDIS",
+            "Map": "IsPhyDisableID"
+        },
+        {
+            "Name": "PLACEOUT",
+            "Map": "IsPlacementOutOfStateID"
+        },
+        {
+            "Name": "AACHILD",
+            "Map": "IsRemovalReasonAAChildID"
+        },
+        {
+            "Name": "AAPARENT",
+            "Map": "IsRemovalReasonAAParentID"
+        },
+        {
+            "Name": "ABANDMNT",
+            "Map": "IsRemovalReasonAbandonmentID"
+        },
+        {
+            "Name": "CHBEHPRB",
+            "Map": "IsRemovalReasonChildBehaveID"
+        },
+        {
+            "Name": "CHILDIS",
+            "Map": "IsRemovalReasonChildDisableID"
+        },
+        {
+            "Name": "DACHILD",
+            "Map": "IsRemovalReasonDAChildID"
+        },
+        {
+            "Name": "DAPARENT",
+            "Map": "IsRemovalReasonDAParentID"
+        },
+        {
+            "Name": "NEGLECT",
+            "Map": "IsRemovalReasonNeglectID"
+        },
+        {
+            "Name": "NOCOPE",
+            "Map": "IsRemovalReasonNoCopeID"
+        },
+        {
+            "Name": "HOUSING",
+            "Map": "IsRemovalReasonNoHousingID"
+        },
+        {
+            "Name": "PRTSDIED",
+            "Map": "IsRemovalReasonParentDeathID"
+        },
+        {
+            "Name": "PRTSJAIL",
+            "Map": "IsRemovalReasonParentInJailID"
+        },
+        {
+            "Name": "PHYABUSE",
+            "Map": "IsRemovalReasonPhyAbuseID"
+        },
+        {
+            "Name": "RELINQSH",
+            "Map": "IsRemovalReasonRelinqID"
+        },
+        {
+            "Name": "SEXABUSE",
+            "Map": "IsRemovalReasonSexAbuseID"
+        },
+        {
+            "Name": "Served",
+            "Map": "IsServedDuringFiscalID"
+        },
+        {
+            "Name": "SSIOTHER",
+            "Map": "IsSocialSecurityPaymentID"
+        },
+        {
+            "Name": "NOA",
+            "Map": "IsStateOrOtherPaymentID"
+        },
+        {
+            "Name": "XIXMEDCD",
+            "Map": "IsTitleXIXPaymentID"
+        },
+        {
+            "Name": "UNTODETM",
+            "Map": "IsUndRaceID"
+        },
+        {
+            "Name": "VISHEAR",
+            "Map": "IsVisualOrHearImparedID"
+        },
+        {
+            "Name": "IsWaiting",
+            "Map": "IsWaitingForAdoptID"
+        },
+        {
+            "Name": "WHITE",
+            "Map": "IsWhiteID"
+        },
+        {
+            "Name": "PedRevDt",
+            "Map": "LastReviewDate"
+        },
+        {
+            "Name": "CASEGOAL",
+            "Map": "LatestCaseGoalID"
+        },
+        {
+            "Name": "CurSetDt",
+            "Map": "LatestPlacementDate"
+        },
+        {
+            "Name": "CURPLSET",
+            "Map": "LatestPlacementSettingID"
+        },
+        {
+            "Name": "LatRemDt",
+            "Map": "LatestRemovalDate"
+        },
+        {
+            "Name": "RemTrnDt",
+            "Map": "LatestRemovalTransactionDate"
+        },
+        {
+            "Name": "FCMNTPAY",
+            "Map": "MonthlyPayment"
+        },
+        {
+            "Name": "TPRMomDt",
+            "Map": "MotherTPRDate"
+        },
+        {
+            "Name": "NUMPLEP",
+            "Map": "NumberOfPlacements"
+        },
+        {
+            "Name": "TOTALREM",
+            "Map": "NumberOfRemovals"
+        },
+        {
+            "Name": "DLstFCDt",
+            "Map": "PreviousDischargeDate"
+        },
+        {
+            "Name": "CTK1YR",
+            "Map": "PrincipleCareTaker1BirthYear"
+        },
+        {
+            "Name": "CTK2YR",
+            "Map": "PrincipleCareTaker2BirthYear"
+        },
+        {
+            "Name": "CTKFAMST",
+            "Map": "PrincipleCareTakerFamilyStructureID"
+        },
+        {
+            "Name": "RECNUMBR",
+            "Map": "RecordID"
+        },
+        {
+            "Name": "MANREM",
+            "Map": "RemovalMannerID"
+        },
+        {
+            "Name": "ReportPeriodEndDate",
+            "Map": "ReportPeriodEndDate"
+        },
+        {
+            "Name": "StateJurisdictionID",
+            "Map": "StateJurisdictionID"
+        },
+        {
+            "Name": "REPDATYR",
+            "Map": "REPDATYR",
+            "Exclude": true
+        },
+        {
+            "Name": "REPDATMO",
+            "Map": "REPDATMO",
+            "Exclude": true
+        },
+        {
+            "Name": "STATE",
+            "Map": "STATE",
+            "Exclude": true
+        },
+        {
+            "Name": "NUMPLEP",
+            "Map": "NUMPLEP",
+            "Exclude": true
+        },
+        {
+            "Name": "FIPSCODE",
+            "Map": "FIPSCODE",
+            "Exclude": true
+        },
+        {
+            "Name": "DQ_missDoDFCDt",
+            "Map": "DQ_missDoDFCDt",
+            "Exclude": true
+        },
+        {
+            "Name": "DQ_ExitDISREASN",
+            "Map": "DQ_ExitDISREASN",
+            "Exclude": true
+        },
+        {
+            "Name": "DQ_InCareU18CASEGOAL",
+            "Map": "DQ_InCareU18CASEGOAL",
+            "Exclude": true
+        },
+        {
+            "Name": "DQ_InCareU18CURPLSET",
+            "Map": "DQ_InCareU18CURPLSET",
+            "Exclude": true
+        },
+        {
+            "Name": "DOBAge",
+            "Map": "DOBAge",
+            "Exclude": true
+        },
+        {
+            "Name": "SEX",
+            "Map": "SEX",
+            "Exclude": true
+        },
+        {
+            "Name": "EVERADPT",
+            "Map": "EVERADPT",
+            "Exclude": true
+        },
+        {
+            "Name": "DISREASN",
+            "Map": "DISREASN",
+            "Exclude": true
+        },
+        {
+            "Name": "CURPLSET",
+            "Map": "CURPLSET",
+            "Exclude": true
+        },
+        {
+            "Name": "PLACEOUT",
+            "Map": "PLACEOUT",
+            "Exclude": true
+        },
+        {
+            "Name": "CASEGOAL",
+            "Map": "CASEGOAL",
+            "Exclude": true
+        },
+        {
+            "Name": "FOSFAMST",
+            "Map": "FOSFAMST",
+            "Exclude": true
+        },
+        {
+            "Name": "AGEADOPT",
+            "Map": "AGEADOPT",
+            "Exclude": true
+        },
+        {
+            "Name": "AMIAKN",
+            "Map": "AMIAKN",
+            "Exclude": true
+        },
+        {
+            "Name": "ASIAN",
+            "Map": "ASIAN",
+            "Exclude": true
+        },
+        {
+            "Name": "BLKAFRAM",
+            "Map": "BLKAFRAM",
+            "Exclude": true
+        },
+        {
+            "Name": "HAWAIIPI",
+            "Map": "HAWAIIPI",
+            "Exclude": true
+        },
+        {
+            "Name": "WHITE",
+            "Map": "WHITE",
+            "Exclude": true
+        },
+        {
+            "Name": "HISORGIN",
+            "Map": "HISORGIN",
+            "Exclude": true
+        },
+        {
+            "Name": "UNTODETM",
+            "Map": "UNTODETM",
+            "Exclude": true
+        },
+        {
+            "Name": "CLINDIS",
+            "Map": "CLINDIS",
+            "Exclude": true
+        },
+        {
+            "Name": "MR",
+            "Map": "MR",
+            "Exclude": true
+        },
+        {
+            "Name": "VISHEAR",
+            "Map": "VISHEAR",
+            "Exclude": true
+        },
+        {
+            "Name": "PHYDIS",
+            "Map": "PHYDIS",
+            "Exclude": true
+        },
+        {
+            "Name": "DSMIII",
+            "Map": "DSMIII",
+            "Exclude": true
+        },
+        {
+            "Name": "OTHERMED",
+            "Map": "OTHERMED",
+            "Exclude": true
+        },
+        {
+            "Name": "MonthsSinceRem1Dt",
+            "Map": "MonthsSinceRem1Dt",
+            "Exclude": true
+        },
+        {
+            "Name": "MonthsInFosterCare",
+            "Map": "MonthsInFosterCare",
+            "Exclude": true
+        },
+        {
+            "Name": "MonthsSinceLatRmDt",
+            "Map": "MonthsSinceLatRmDt",
+            "Exclude": true
+        },
+        {
+            "Name": "MonthsSinceCurSetDt",
+            "Map": "MonthsSinceCurSetDt",
+            "Exclude": true
+        }
+    ]
+}

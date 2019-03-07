@@ -1,0 +1,433 @@
+{
+    "DQ_ExitDISREASN": {
+        "0": "NotApplicable",
+        "1": "ReunifyWithParentOrPrincipalCaretaker",
+        "2": "LiveWithOtherRelatives",
+        "3": "Adoption",
+        "4": "Emancipation",
+        "5": "Guardianship",
+        "6": "TransferToAnotherAgency",
+        "7": "Runaway",
+        "8": "DeathOfChild"
+    },
+    "DQ_InCareU18CASEGOAL": {
+        "1": "ReunifyWithParentOrPrincipalCaretaker",
+        "2": "LiveWithOtherRelatives",
+        "3": "Adoption",
+        "4": "LongTermFosterCare",
+        "5": "Emancipation",
+        "6": "Guardianship",
+        "7": "CasePlanGoalNotYetEstablished",
+        "99": "Missing"
+    },
+    "DQ_InCareU18CURPLSET": {
+        "1": "PreAdoptiveHome",
+        "2": "FosterHomeRelative",
+        "3": "FosterHomeNonRelative",
+        "4": "GroupHome",
+        "5": "Institution",
+        "6": "SupervisedIndependentliving",
+        "7": "Runaway",
+        "8": "TrialHomeVisit",
+        "99": "Missing"
+    },
+    "STATE": {
+        "1": "AL",
+        "2": "AK",
+        "4": "AZ",
+        "5": "AR",
+        "6": "CA",
+        "8": "CO",
+        "9": "CT",
+        "10": "DE",
+        "11": "DC",
+        "12": "FL",
+        "13": "GA",
+        "15": "HI",
+        "16": "ID",
+        "17": "IL",
+        "18": "IN",
+        "19": "IA",
+        "20": "KS",
+        "21": "KY",
+        "22": "LA",
+        "23": "ME",
+        "24": "MD",
+        "25": "MA",
+        "26": "MI",
+        "27": "MN",
+        "28": "MS",
+        "29": "MO",
+        "30": "MT",
+        "31": "NE",
+        "32": "NV",
+        "33": "NH",
+        "34": "NJ",
+        "35": "NM",
+        "36": "NY",
+        "37": "NC",
+        "38": "ND",
+        "39": "OH",
+        "40": "OK",
+        "41": "OR",
+        "42": "PA",
+        "44": "RI",
+        "45": "SC",
+        "46": "SD",
+        "47": "TN",
+        "48": "TX",
+        "49": "UT",
+        "50": "VT",
+        "51": "VA",
+        "53": "WA",
+        "54": "WV",
+        "55": "WI",
+        "56": "WY",
+        "72": "PR"
+    },
+    "SEX": {
+        "1": "M",
+        "2": "F"
+    },
+    "EVERADPT": {
+        "0": "NotApplicable",
+        "1": "Yes",
+        "2": "No",
+        "3": "UnableToDetermine"
+    },
+    "DISREASN": {
+        "0": "NotApplicable",
+        "1": "ReunifyWithParentOrPrincipalCaretaker",
+        "2": "LiveWithOtherRelatives",
+        "3": "Adoption",
+        "4": "Emancipation",
+        "5": "Guardianship",
+        "6": "TransferToAnotherAgency",
+        "7": "Runaway",
+        "8": "DeathOfChild"
+    },
+    "CURPLSET": {
+        "1": "PreAdoptiveHome",
+        "2": "FosterHomeRelative",
+        "3": "FosterHomeNonRelative",
+        "4": "GroupHome",
+        "5": "Institution",
+        "6": "SupervisedIndependentliving",
+        "7": "Runaway",
+        "8": "TrialHomeVisit",
+        "99": "Missing"
+    },
+    "PLACEOUT": {
+        "0": "NotApplicatle",
+        "1": "Yes",
+        "2": "No",
+        "3": "UnableToDetermine"
+    },
+    "CASEGOAL": {
+        "1": "ReunifyWithParentOrPrincipalCaretaker",
+        "2": "LiveWithOtherRelatives",
+        "3": "Adoption",
+        "4": "LongTermFosterCare",
+        "5": "Emancipation",
+        "6": "Guardianship",
+        "7": "CasePlanGoalNotYetEstablished",
+        "99": "Missing"
+    },
+    "FOSFAMST": {
+        "0": "NotApplicatle",
+        "1": "MarriedCouple",
+        "2": "UnmarriedCouple",
+        "3": "SingleFemale",
+        "4": "SingleMale",
+        "5": "UnableToDetermine"
+    },
+    "AGEADOPT": {
+        "0": "NotApplicatle",
+        "1": "LessThan2YearsOld",
+        "2": "TwoTo5YearsOld",
+        "3": "SixTo12YearsOld",
+        "4": "ThirteenYearsOrOld",
+        "5": "UnableToDetermine"
+    },
+    "AMIAKN": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "ASIAN": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "BLKAFRAM": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "HAWAIIPI": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "WHITE": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "HISORGIN": {
+        "0": "NotApplicable",
+        "1": "Yes",
+        "2": "No",
+        "3": "NotYetDetermined"
+    },
+    "UNTODETM": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "CLINDIS": {
+        "1": "Yes",
+        "2": "No",
+        "3": "NotYetDetermined"
+    },
+    "MR": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "VISHEAR": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "PHYDIS": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "DSMIII": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "OTHERMED": {
+        "0": "No",
+        "1": "Yes"
+    },
+    "ChSex": {
+        "1": "M",
+        "2": "F",
+        "9": "U"
+    },
+    "RptSrc": {
+        "1": "SocialServicesPersonnel",
+        "2": "MedicalPersonnel",
+        "3": "MentalHealthPersonnel",
+        "4": "LegalAndLawEnforcementOrCriminalJustice",
+        "5": "EducationPersonnel",
+        "6": "ChildDayCareProvider",
+        "7": "SubstituteCareProvider",
+        "8": "AllegedVictim",
+        "9": "Parent",
+        "10": "OtherRelative",
+        "11": "FriendsOrNeighbo",
+        "12": "AllegedPerpetrator",
+        "13": "AnonymousReporter",
+        "88": "Other",
+        "99": "UnknownOrMissing"
+    },
+    "RptDisp": {
+        "1": "Substantiated",
+        "2": "IndicatedOrReasonToSuspect",
+        "3": "AlternativeResponseDispositionVictim",
+        "4": "AlternativeResponseDispositionNotAVictim",
+        "5": "Unsubstantiated",
+        "6": "UnsubstantiatedDueToIntentionallyFalse",
+        "7": "ClosedNoFinding",
+        "88": "Other",
+        "99": "UnknownOrMissing"
+    },
+    "Notifs": {
+        "1": "None",
+        "2": "PoliceOrProsecutor",
+        "3": "LicensingAgency",
+        "4": "Both",
+        "8": "Other",
+        "9": "UnknownOrMissing"
+    },
+    "CEthn": {
+        "1": "YesHispanicOrLatino",
+        "2": "NotHispanicOrLatino",
+        "3": "UnableToDetermine",
+        "9": "UnknownOrMissing"
+    },
+    "ChLvng": {
+        "1": "MarriedParents",
+        "2": "MarriedParentAndStepParent",
+        "3": "UnmarriedParents",
+        "4": "ParentAndCohabitatingPartner",
+        "5": "BothParentsMaritalStatusUnknown",
+        "6": "SingleParentMotherOnly",
+        "7": "SingleParentFatherOnly",
+        "8": "SingleParentMotherAndOtherAdult",
+        "9": "SingleParentFatherAndOtherAdult",
+        "10": "NonParentRelativeCaregiver",
+        "11": "NonRelativeCaregiver",
+        "12": "GroupHomeOrResidentialFacility",
+        "88": "OtherSetting",
+        "99": "Unknown"
+    },
+    "ChMal1": {
+        "1": "PhysicalAbuse",
+        "2": "NeglectOrDeprivationOfNecessities",
+        "3": "MedicalNeglect",
+        "4": "SexualAbus",
+        "5": "PsychologicalOrEmotionalMaltreatment",
+        "6": "NoAllegedMaltreatment",
+        "8": "Other",
+        "9": "UnknownOrMissing"
+    },
+    "ChMal2": {
+        "1": "PhysicalAbuse",
+        "2": "NeglectOrDeprivationOfNecessities",
+        "3": "MedicalNeglect",
+        "4": "SexualAbus",
+        "5": "PsychologicalOrEmotionalMaltreatment",
+        "6": "NoAllegedMaltreatment",
+        "8": "Other",
+        "9": "UnknownOrMissing"
+    },
+    "Per1Rel": {
+        "1": "Parent",
+        "2": "OtherRelativeNonFosterParent",
+        "3": "RelativeFosterParent",
+        "4": "NonrelativeFosterParent",
+        "5": "GroupHomeOrResidentialFacilityStaff",
+        "6": "ChildDaycareProvider",
+        "7": "UnmarriedPartnerOfParent",
+        "8": "LegalGuardian",
+        "9": "OtherProfessionals",
+        "10": "FriendsOrEeighbors",
+        "33": "FosterParent",
+        "88": "Other",
+        "99": "UnknownOrMissing"
+    },
+    "Per2Rel": {
+        "1": "Parent",
+        "2": "OtherRelativeNonFosterParent",
+        "3": "RelativeFosterParent",
+        "4": "NonrelativeFosterParent",
+        "5": "GroupHomeOrResidentialFacilityStaff",
+        "6": "ChildDaycareProvider",
+        "7": "UnmarriedPartnerOfParent",
+        "8": "LegalGuardian",
+        "9": "OtherProfessionals",
+        "10": "FriendsOrEeighbors",
+        "33": "FosterParent",
+        "88": "Other",
+        "99": "UnknownOrMissing"
+    },
+    "Per1Prnt": {
+        "1": "BiologicalParent",
+        "2": "StepParent",
+        "3": "AdoptiveParent",
+        "9": "UnknownOrMissing"
+    },
+    "ChAge": {
+        "0": "UnderOneYear",
+        "1": "A1",
+        "2": "A2",
+        "3": "A3",
+        "4": "A4",
+        "5": "A5",
+        "6": "A6",
+        "7": "A7",
+        "8": "A8",
+        "9": "A9",
+        "10": "A10",
+        "11": "A11",
+        "12": "A12",
+        "13": "A13",
+        "14": "A14",
+        "15": "A15",
+        "16": "A16",
+        "17": "A17",
+        "18": "A18",
+        "19": "A19",
+        "20": "A20",
+        "21": "A21OrOlder",
+        "77": "Unborn",
+        "99": "UnknownOrMissing"
+    },
+    "ChRacAI": {
+        "1": "Yes",
+        "2": "No",
+        "3": "UnableToDetermine",
+        "9": "UnknownOrMissing"
+    },
+    "ChRacAs": {
+        "1": "Yes",
+        "2": "No",
+        "3": "UnableToDetermine",
+        "9": "UnknownOrMissing"
+    },
+    "ChRacBl": {
+        "1": "Yes",
+        "2": "No",
+        "3": "UnableToDetermine",
+        "9": "UnknownOrMissing"
+    },
+    "ChRacNH": {
+        "1": "Yes",
+        "2": "No",
+        "3": "UnableToDetermine",
+        "9": "UnknownOrMissing"
+    },
+    "ChRacWh": {
+        "1": "Yes",
+        "2": "No",
+        "3": "UnableToDetermine",
+        "9": "UnknownOrMissing"
+    },
+    "ChRacUd": {
+        "1": "Yes",
+        "2": "No",
+        "3": "UnableToDetermine",
+        "9": "UnknownOrMissing"
+    },
+    "CdAlc": {
+        "1": "Yes",
+        "2": "No",
+        "9": "UnknownOrMissing"
+    },
+    "CdDrug": {
+        "1": "Yes",
+        "2": "No",
+        "9": "UnknownOrMissing"
+    },
+    "CdRtrd": {
+        "1": "Yes",
+        "2": "No",
+        "9": "UnknownOrMissing"
+    },
+    "CdEmotnl": {
+        "1": "Yes",
+        "2": "No",
+        "9": "UnknownOrMissing"
+    },
+    "CdVisual": {
+        "1": "Yes",
+        "2": "No",
+        "9": "UnknownOrMissing"
+    },
+    "CdLearn": {
+        "1": "Yes",
+        "2": "No",
+        "9": "UnknownOrMissing"
+    },
+    "CdPhys": {
+        "1": "Yes",
+        "2": "No",
+        "9": "UnknownOrMissing"
+    },
+    "CdBehav": {
+        "1": "Yes",
+        "2": "No",
+        "9": "UnknownOrMissing"
+    },
+    "CdMedicl": {
+        "1": "Yes",
+        "2": "No",
+        "9": "UnknownOrMissing"
+    }
+}
