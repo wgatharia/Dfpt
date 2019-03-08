@@ -1,6 +1,6 @@
 import os
 import json
-
+import sys
 from strategy.afcarsstate import AfcarsState
 from strategy.afcarsnational import AfcarsNational
 from strategy.ncandsstate import NcandsState
@@ -47,10 +47,10 @@ def GetFileMetaData(fileToProcess):
          print(e)
 
 #scan folder and process file
-def main():
+def main(sourcePath):
     #source and export folder file to process
-    sourceFolder = "E:\\Casey\\RawFileToolGroup\\RawDataFile\\"
-    exportFolder = "E:\\Casey\\RawFileToolGroup\\Exported\\Python\\"
+    sourceFolder = sourcePath + "\\RawDataFile\\"
+    exportFolder = sourcePath + "\\Exported\\Python\\"
 
     if os.path.exists(sourceFolder):   
         files = os.listdir(sourceFolder)
@@ -77,4 +77,10 @@ def main():
                      raise Exception("Unsupported file type.{0}".format(file_meta_data['FileType']))
 #program entry point
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) == 2:
+        main(sys.argv[1])
+    else:
+        print("""
+            Usage: python processFiles.py \"D:\\Casey\\RawFileToolGroup\"
+            where \"D:\\Casey\\RawFileToolGroup\" is path with files to process.
+        """)
