@@ -61,7 +61,7 @@
             "Map": "ChAgeID"
         },
         {
-            "Name": "RptCnty",
+            "Name": "ChCnty",
             "Map": "ChCnty"
         },
         {
@@ -545,7 +545,7 @@
             "Map": "ReportDate"
         },
         {
-            "Name": "RptDispDt",
+            "Name": "RpDispDt",
             "Map": "ReportDispositionDate"
         },
         {
@@ -585,7 +585,7 @@
             "Map": "SubAbuseID"
         },
         {
-            "Name": "SubYear",
+            "Name": "SubYr",
             "Map": "SubYr"
         },
         {
@@ -612,11 +612,6 @@
         {
             "Name": "RptVictim",
             "Map": "RptVictim",
-            "Exclude": true
-        },
-        {
-            "Name": "SubYear",
-            "Map": "SubYear",
             "Exclude": true
         },
         {

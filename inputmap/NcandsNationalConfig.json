@@ -6,7 +6,7 @@
   "InputMap": [
     {
       "Description": "Submission Year",
-      "Name": "SubYear",
+      "Name": "SubYr",
       "Width": 4,
       "Value": null,
       "Type": "int"
@@ -182,6 +182,13 @@
       "Value": null,
       "Type": "int",
       "DefaultValue": "-2"
+    },
+    {
+      "Description": "County the child is in",
+      "Name": "ChCnty",
+      "Width": 3,
+      "Value": null,
+      "Type": "string"
     },
     {
       "Description": "Living Arrangement",

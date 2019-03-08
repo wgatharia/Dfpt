@@ -7,7 +7,7 @@
   "InputMap": [
     {
       "Description": "Submission Year",
-      "Name": "SubYear",
+      "Name": "SubYr",
       "Width": 4,
       "Value": null,
       "Type": "int"

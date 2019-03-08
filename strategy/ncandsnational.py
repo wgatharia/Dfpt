@@ -55,7 +55,10 @@ class NcandsNational(NcandsBase):
                 if fld["Type"] == "datetime":
                     d[fld["Name"]] = ""
                 elif fld["Type"] == "int":
-                    d[fld["Name"]] = fld["Value"]
+                    if "DefaultValue" in fld:
+                        d[fld["Name"]] = int(fld["DefaultValue"])
+                    else:
+                        d[fld["Name"]] = fld["Value"]
                 else:
                     d[fld["Name"]] = fld["Value"]
 

@@ -26,9 +26,12 @@ class NcandsBase(FileBase):
     def GetRptCnty(self, rptCnty):
         state = self.GetStateJurisdictionID(self.FileMetaData["StateCode"])[:2]
         if rptCnty == "-1":
-            return state + "xx8"
-        return state + "xxx"
-
+            return state + "xxx"
+        elif rptCnty == "99":
+            return state + "099"
+        else:
+            return rptCnty
+            
     def GetAdjustedPerAge(self, age):
         if age is None:
             return -2
@@ -77,7 +80,7 @@ class NcandsBase(FileBase):
                     data[fld["Map"]] = self.GetStateJurisdictionID(
                         line[fld["Name"]])
                 elif fld["Map"] == "ChAgeID" or fld["Map"] == "ChAge":
-                    data[fld["Map"]] = -2 if line[fld["Name"]] > 21 and line[fld["Name"]] != 77 and line[fld["Name"]] != 99 else line[fld["Name"]]
+                    data[fld["Map"]] = -1 if line[fld["Name"]] == 77 else -2 if line[fld["Name"]] > 21 else line[fld["Name"]]
                 elif fld["Map"] in ["CdAlcID", "CdBehavID", "CdDrugID", "CdEmotnlID", "CdLearnID", "CdMediclID", "CdPhysID", "CdRtrdID", "CdVisualID",
                                     "ChMilID", "ChPriorID", "CoChRepID", "EducatnID", "EmployID", "FamPlanID", "FamPresID", "FamSupID", "FCAlcID", "FCDrugID", "FCEmotnlID",
                                     "FCHouseID", "FCLearnID", "FCMediclID", "FCMoneyID", "FCPhysID", "FCPublicID", "FCRtrdID", "FCViolID", "FCVisualID",
@@ -169,7 +172,7 @@ class NcandsBase(FileBase):
 
     @property
     def NcandsNullIntType(self):
-        return ['ChSex', 'RptVictim', 'SubYear']
+        return ['ChSex', 'RptVictim', 'SubYr']
 
     @property
     def NcandsIntType(self):
