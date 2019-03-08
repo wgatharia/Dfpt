@@ -80,6 +80,8 @@ class FileBase(ABC):
             results[column] = {}
             for line in output:
                 data = output[line][column]
+                if data is None:
+                    data = -2
                 if data not in results[column]:
                       results[column][data] = 1
                 else:

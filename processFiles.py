@@ -68,9 +68,9 @@ def main():
                 elif file_meta_data['FileType'] == "NcandsState":
                     ncands = NcandsState(**file_meta_data)
                     ncands.ProcessFile(file)
-                # elif file_meta_data['FileType'] == "NcandsNational":
-                #     ncands = NcandsState(**file_meta_data)
-                #     ncands.ProcessFile(file)
+                elif file_meta_data['FileType'] == "NcandsNational":
+                    ncands = NcandsState(**file_meta_data)
+                    ncands.ProcessFile(file)
                 else:
                      raise Exception("Unsupported file type.{0}".format(file_meta_data['FileType']))
 #program entry point

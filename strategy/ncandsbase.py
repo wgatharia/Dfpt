@@ -14,6 +14,15 @@ class NcandsBase(FileBase):
     def Ncands_DQ_Columns(self):
         return ['DQ_NCANDS_MissingAge', 'DQ_NCANDS_HasID', 'DQ_NCANDS_AFCARSMatch', 'DQ_NCANDS_IDMatch', 'DQ_NCANDS_IDMatchChildDiff']
 
+    #rules for data quality
+    def GetNcandsDQ(self, fld, line):
+        if fld == "DQ_NCANDS_MissingAge":
+            return 1 if line.get("ChAge", '') is '' or  line.get("ChAge", None) == 99 else 0
+        elif fld == "DQ_NCANDS_HasID":
+            return 0 if line.get("ChID", '') is '' else 1
+        else:
+            return 0
+
     def GetRptCnty(self, stateTer):
         pass
 
