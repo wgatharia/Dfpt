@@ -23,10 +23,15 @@ class NcandsBase(FileBase):
         else:
             return 0
 
-    def GetRptCnty(self, stateTer):
-        pass
+    def GetRptCnty(self, rptCnty):
+        state = self.GetStateJurisdictionID(self.FileMetaData["StateCode"])[:2]
+        if rptCnty == "-1":
+            return state + "xx8"
+        return state + "xxx"
 
     def GetAdjustedPerAge(self, age):
+        if age is None:
+            return -2
         if age > 18 and age < 70:
             return age
         elif age > 0 and age <= 18:
@@ -39,18 +44,19 @@ class NcandsBase(FileBase):
             return -2
 
     # trasform data to output format
-    def TransformData(self, deduped_data):
+    def TransformData(self, deduped_data, output_map_file = "OutputMap\\NcandsStateConfig.json"):
         transformed = {}
         output = {}
         fieldnames = []
         # read output map
-        with open("OutputMap\\NcandsStateConfig.json", 'r') as f:
+        with open(output_map_file, 'r') as f:
             outputMap = json.load(f)["OutputMap"]
         f.close()
 
         # output map field names
         for fld in outputMap:
-            fieldnames.append(fld["Map"])
+            if not "Exclude" in fld:
+                fieldnames.append(fld["Map"])
 
         # build output
         for i in deduped_data:
@@ -60,8 +66,8 @@ class NcandsBase(FileBase):
                 if fld["Map"] in ["ChildGenderCode", "Per1SexID", "Per2SexID", "Per3SexID"]:
                     data[fld["Map"]] = self.GetGenderCode(fld["Name"], line)
                 elif fld["Map"] == "AgencyJurisdictionID":
-                    data[fld["Map"]] = self.GetStateJurisdictionID(
-                        line['StaTerr'])[:2] + line[fld["Name"]]
+                    data[fld["Map"]] = line[fld["Name"]] if len(line[fld["Name"]]) == 5 else self.GetStateJurisdictionID(
+                        self.FileMetaData["StateCode"])[:2] + line[fld["Name"]]
                 elif fld["Map"] in ["Per1AgeID", "Per2AgeID", "Per3AgeID", "Per1Age", "Per2Age", "Per3Age"]:
                     data[fld["Map"]] = self.GetAdjustedPerAge(
                         line[fld["Name"]])

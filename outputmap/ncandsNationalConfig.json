@@ -1,0 +1,763 @@
+{
+    "OutputMap": [
+        {
+            "Name": "Adopt",
+            "Map": "AdoptID"
+        },
+        {
+            "Name": "AFCARSID",
+            "Map": "AFCARSID"
+        },
+        {
+            "Name": "RptCnty",
+            "Map": "AgencyJurisdictionID"
+        },
+        {
+            "Name": "CaseMang",
+            "Map": "CaseMangID"
+        },
+        {
+            "Name": "CdAlc",
+            "Map": "CdAlcID"
+        },
+        {
+            "Name": "CdBehav",
+            "Map": "CdBehavID"
+        },
+        {
+            "Name": "CdDrug",
+            "Map": "CdDrugID"
+        },
+        {
+            "Name": "CdEmotnl",
+            "Map": "CdEmotnlID"
+        },
+        {
+            "Name": "CdLearn",
+            "Map": "CdLearnID"
+        },
+        {
+            "Name": "CdMedicl",
+            "Map": "CdMediclID"
+        },
+        {
+            "Name": "CdPhys",
+            "Map": "CdPhysID"
+        },
+        {
+            "Name": "CdRtrd",
+            "Map": "CdRtrdID"
+        },
+        {
+            "Name": "CdVisual",
+            "Map": "CdVisualID"
+        },
+        {
+            "Name": "CEthn",
+            "Map": "CEthnID"
+        },
+        {
+            "Name": "ChAge",
+            "Map": "ChAgeID"
+        },
+        {
+            "Name": "RptCnty",
+            "Map": "ChCnty"
+        },
+        {
+            "Name": "ChID",
+            "Map": "ChID"
+        },
+        {
+            "Name": "ChBdate",
+            "Map": "ChildBirthDate"
+        },
+        {
+            "Name": "ChSex",
+            "Map": "ChildGenderCode"
+        },
+        {
+            "Name": "ChLvng",
+            "Map": "ChLvngID"
+        },
+        {
+            "Name": "ChMal1",
+            "Map": "ChMal1ID"
+        },
+        {
+            "Name": "ChMal2",
+            "Map": "ChMal2ID"
+        },
+        {
+            "Name": "ChMal3",
+            "Map": "ChMal3ID"
+        },
+        {
+            "Name": "ChMal4",
+            "Map": "ChMal4ID"
+        },
+        {
+            "Name": "ChMil",
+            "Map": "ChMilID"
+        },
+        {
+            "Name": "ChPrior",
+            "Map": "ChPriorID"
+        },
+        {
+            "Name": "ChRacAI",
+            "Map": "ChRacAIID"
+        },
+        {
+            "Name": "ChRacAs",
+            "Map": "ChRacAsID"
+        },
+        {
+            "Name": "ChRacBl",
+            "Map": "ChRacBlID"
+        },
+        {
+            "Name": "ChRacNH",
+            "Map": "ChRacNHID"
+        },
+        {
+            "Name": "ChRacUd",
+            "Map": "ChRacUdID"
+        },
+        {
+            "Name": "ChRacWh",
+            "Map": "ChRacWhID"
+        },
+        {
+            "Name": "CoChRep",
+            "Map": "CoChRepID"
+        },
+        {
+            "Name": "Counsel",
+            "Map": "CounselID"
+        },
+        {
+            "Name": "DayCare",
+            "Map": "DaycareID"
+        },
+        {
+            "Name": "DQ_NCANDS_MissingAge",
+            "Map": "DQ_NCANDS_MissingAge"
+        },
+        {
+            "Name": "DQ_NCANDS_HasID",
+            "Map": "DQ_NCANDS_HasID"
+        },
+        {
+            "Name": "DQ_NCANDS_AFCARSMatch",
+            "Map": "DQ_NCANDS_AFCARSMatch"
+        },
+        {
+            "Name": "DQ_NCANDS_IDMatch",
+            "Map": "DQ_NCANDS_IDMatch"
+        },
+        {
+            "Name": "DQ_NCANDS_IDMatchChildDiff",
+            "Map": "DQ_NCANDS_IDMatchChildDiff"
+        },
+        {
+            "Name": "Educatn",
+            "Map": "EducatnID"
+        },
+        {
+            "Name": "Employ",
+            "Map": "EmployID"
+        },
+        {
+            "Name": "FamPlan",
+            "Map": "FamPlanID"
+        },
+        {
+            "Name": "FamPres",
+            "Map": "FamPresID"
+        },
+        {
+            "Name": "FamSup",
+            "Map": "FamSupID"
+        },
+        {
+            "Name": "FCAlc",
+            "Map": "FCAlcID"
+        },
+        {
+            "Name": "FCDrug",
+            "Map": "FCDrugID"
+        },
+        {
+            "Name": "FCEmotnl",
+            "Map": "FCEmotnlID"
+        },
+        {
+            "Name": "FCHouse",
+            "Map": "FCHouseID"
+        },
+        {
+            "Name": "FCLearn",
+            "Map": "FCLearnID"
+        },
+        {
+            "Name": "FCMedicl",
+            "Map": "FCMediclID"
+        },
+        {
+            "Name": "FCMoney",
+            "Map": "FCMoneyID"
+        },
+        {
+            "Name": "FCPhys",
+            "Map": "FCPhysID"
+        },
+        {
+            "Name": "FCPublic",
+            "Map": "FCPublicID"
+        },
+        {
+            "Name": "FCRtrd",
+            "Map": "FCRtrdID"
+        },
+        {
+            "Name": "FCViol",
+            "Map": "FCViolID"
+        },
+        {
+            "Name": "FCVisual",
+            "Map": "FCVisualID"
+        },
+        {
+            "Name": "FosterCr",
+            "Map": "FosterCrID"
+        },
+        {
+            "Name": "Health",
+            "Map": "HealthID"
+        },
+        {
+            "Name": "Homebase",
+            "Map": "HomebaseID"
+        },
+        {
+            "Name": "Housing",
+            "Map": "HousingID"
+        },
+        {
+            "Name": "IncidDt",
+            "Map": "IncidentDate"
+        },
+        {
+            "Name": "InfoRef",
+            "Map": "InfoRefID"
+        },
+        {
+            "Name": "InvDate",
+            "Map": "InvestigationStartDate"
+        },
+        {
+            "Name": "JuvPet",
+            "Map": "JuvPetID"
+        },
+        {
+            "Name": "Legal",
+            "Map": "LegalID"
+        },
+        {
+            "Name": "Mal1Lev",
+            "Map": "Mal1LevID"
+        },
+        {
+            "Name": "Mal2Lev",
+            "Map": "Mal2LevID"
+        },
+        {
+            "Name": "Mal3Lev",
+            "Map": "Mal3LevID"
+        },
+        {
+            "Name": "Mal4Lev",
+            "Map": "Mal4LevID"
+        },
+        {
+            "Name": "MalDeath",
+            "Map": "MalDeathID"
+        },
+        {
+            "Name": "MentHlth",
+            "Map": "MentHlthID"
+        },
+        {
+            "Name": "Notifs",
+            "Map": "NotifsID"
+        },
+        {
+            "Name": "OtherSv",
+            "Map": "OtherSvID"
+        },
+        {
+            "Name": "P1RacAI",
+            "Map": "P1RacAIID"
+        },
+        {
+            "Name": "P1RacAs",
+            "Map": "P1RacAsID"
+        },
+        {
+            "Name": "P1RacBl",
+            "Map": "P1RacBlID"
+        },
+        {
+            "Name": "P1RacNH",
+            "Map": "P1RacNHID"
+        },
+        {
+            "Name": "P1RacUd",
+            "Map": "P1RacUdID"
+        },
+        {
+            "Name": "P1RacWh",
+            "Map": "P1RacWhID"
+        },
+        {
+            "Name": "P2RacAI",
+            "Map": "P2RacAIID"
+        },
+        {
+            "Name": "P2RacAs",
+            "Map": "P2RacAsID"
+        },
+        {
+            "Name": "P2RacBl",
+            "Map": "P2RacBlID"
+        },
+        {
+            "Name": "P2RacNH",
+            "Map": "P2RacNHID"
+        },
+        {
+            "Name": "P2RacUd",
+            "Map": "P2RacUdID"
+        },
+        {
+            "Name": "P2RacWh",
+            "Map": "P2RacWhID"
+        },
+        {
+            "Name": "P3RacAI",
+            "Map": "P3RacAIID"
+        },
+        {
+            "Name": "P3RacAs",
+            "Map": "P3RacAsID"
+        },
+        {
+            "Name": "P3RacBl",
+            "Map": "P3RacBlID"
+        },
+        {
+            "Name": "P3RacNH",
+            "Map": "P3RacNHID"
+        },
+        {
+            "Name": "P3RacUd",
+            "Map": "P3RacUdID"
+        },
+        {
+            "Name": "P3RacWh",
+            "Map": "P3RacWhID"
+        },
+        {
+            "Name": "Per1Age",
+            "Map": "Per1AgeID"
+        },
+        {
+            "Name": "Per1Cr",
+            "Map": "Per1CrID"
+        },
+        {
+            "Name": "Per1Ethn",
+            "Map": "Per1EthnID"
+        },
+        {
+            "Name": "Per1ID",
+            "Map": "Per1ID"
+        },
+        {
+            "Name": "Per1Mal1",
+            "Map": "Per1Mal1ID"
+        },
+        {
+            "Name": "Per1Mal2",
+            "Map": "Per1Mal2ID"
+        },
+        {
+            "Name": "Per1Mal3",
+            "Map": "Per1Mal3ID"
+        },
+        {
+            "Name": "Per1Mal4",
+            "Map": "Per1Mal4ID"
+        },
+        {
+            "Name": "Per1Mil",
+            "Map": "Per1MilID"
+        },
+        {
+            "Name": "Per1Pior",
+            "Map": "Per1PiorID"
+        },
+        {
+            "Name": "Per1Prnt",
+            "Map": "Per1PrntID"
+        },
+        {
+            "Name": "Per1Rel",
+            "Map": "Per1RelID"
+        },
+        {
+            "Name": "Per1Sex",
+            "Map": "Per1SexID"
+        },
+        {
+            "Name": "Per2Age",
+            "Map": "Per2AgeID"
+        },
+        {
+            "Name": "Per2Cr",
+            "Map": "Per2CrID"
+        },
+        {
+            "Name": "Per2Ethn",
+            "Map": "Per2EthnID"
+        },
+        {
+            "Name": "Per2ID",
+            "Map": "Per2ID"
+        },
+        {
+            "Name": "Per2Mal1",
+            "Map": "Per2Mal1ID"
+        },
+        {
+            "Name": "Per2Mal2",
+            "Map": "Per2Mal2ID"
+        },
+        {
+            "Name": "Per2Mal3",
+            "Map": "Per2Mal3ID"
+        },
+        {
+            "Name": "Per2Mal4",
+            "Map": "Per2Mal4ID"
+        },
+        {
+            "Name": "Per2Mil",
+            "Map": "Per2MilID"
+        },
+        {
+            "Name": "Per2Pior",
+            "Map": "Per2PiorID"
+        },
+        {
+            "Name": "Per2Prnt",
+            "Map": "Per2PrntID"
+        },
+        {
+            "Name": "Per2Rel",
+            "Map": "Per2RelID"
+        },
+        {
+            "Name": "Per2Sex",
+            "Map": "Per2SexID"
+        },
+        {
+            "Name": "Per3Age",
+            "Map": "Per3AgeID"
+        },
+        {
+            "Name": "Per3Cr",
+            "Map": "Per3CrID"
+        },
+        {
+            "Name": "Per3Ethn",
+            "Map": "Per3EthnID"
+        },
+        {
+            "Name": "Per3ID",
+            "Map": "Per3ID"
+        },
+        {
+            "Name": "Per3Mal1",
+            "Map": "Per3Mal1ID"
+        },
+        {
+            "Name": "Per3Mal2",
+            "Map": "Per3Mal2ID"
+        },
+        {
+            "Name": "Per3Mal3",
+            "Map": "Per3Mal3ID"
+        },
+        {
+            "Name": "Per3Mal4",
+            "Map": "Per3Mal4ID"
+        },
+        {
+            "Name": "Per3Mil",
+            "Map": "Per3MilID"
+        },
+        {
+            "Name": "Per3Pior",
+            "Map": "Per3PiorID"
+        },
+        {
+            "Name": "Per3Prnt",
+            "Map": "Per3PrntID"
+        },
+        {
+            "Name": "Per3Rel",
+            "Map": "Per3RelID"
+        },
+        {
+            "Name": "Per3Sex",
+            "Map": "Per3SexID"
+        },
+        {
+            "Name": "PetDate",
+            "Map": "PetitionDate"
+        },
+        {
+            "Name": "PostServ",
+            "Map": "PostServID"
+        },
+        {
+            "Name": "PregPar",
+            "Map": "PregParID"
+        },
+        {
+            "Name": "RmvDate",
+            "Map": "RemovalDate"
+        },
+        {
+            "Name": "RptDt",
+            "Map": "ReportDate"
+        },
+        {
+            "Name": "RptDispDt",
+            "Map": "ReportDispositionDate"
+        },
+        {
+            "Name": "Respite",
+            "Map": "RespiteID"
+        },
+        {
+            "Name": "RptDisp",
+            "Map": "RptDispID"
+        },
+        {
+            "Name": "RptID",
+            "Map": "RptID"
+        },
+        {
+            "Name": "RptSrc",
+            "Map": "RptSrcID"
+        },
+        {
+            "Name": "ServDate",
+            "Map": "ServiceDate"
+        },
+        {
+            "Name": "SSDelinq",
+            "Map": "SSDelinqID"
+        },
+        {
+            "Name": "SSDisabl",
+            "Map": "SSDisablID"
+        },
+        {
+            "Name": "StaTerr",
+            "Map": "StateJurisdictionID"
+        },
+        {
+            "Name": "SubAbuse",
+            "Map": "SubAbuseID"
+        },
+        {
+            "Name": "SubYear",
+            "Map": "SubYr"
+        },
+        {
+            "Name": "SuprvID",
+            "Map": "SuprvID"
+        },
+        {
+            "Name": "TransLiv",
+            "Map": "TransLivID"
+        },
+        {
+            "Name": "Transprt",
+            "Map": "TransprtID"
+        },
+        {
+            "Name": "WrkrID",
+            "Map": "WrkrID"
+        },
+        {
+            "Name": "ChSex",
+            "Map": "ChSex",
+            "Exclude": true
+        },
+        {
+            "Name": "RptVictim",
+            "Map": "RptVictim",
+            "Exclude": true
+        },
+        {
+            "Name": "SubYear",
+            "Map": "SubYear",
+            "Exclude": true
+        },
+        {
+            "Name": "RptCnty",
+            "Map": "RptCnty",
+            "Exclude": true
+        },
+        {
+            "Name": "RptSrc",
+            "Map": "RptSrc",
+            "Exclude": true
+        },
+        {
+            "Name": "RptDisp",
+            "Map": "RptDisp",
+            "Exclude": true
+        },
+        {
+            "Name": "Notifs",
+            "Map": "Notifs",
+            "Exclude": true
+        },
+        {
+            "Name": "CEthn",
+            "Map": "CEthn",
+            "Exclude": true
+        },
+        {
+            "Name": "ChLvng",
+            "Map": "ChLvng",
+            "Exclude": true
+        },
+        {
+            "Name": "ChMal1",
+            "Map": "ChMal1",
+            "Exclude": true
+        },
+        {
+            "Name": "ChMal2",
+            "Map": "ChMal2",
+            "Exclude": true
+        },
+        {
+            "Name": "Per1Rel",
+            "Map": "Per1Rel",
+            "Exclude": true
+        },
+        {
+            "Name": "Per2Rel",
+            "Map": "Per2Rel",
+            "Exclude": true
+        },
+        {
+            "Name": "Per1Prnt",
+            "Map": "Per1Prnt",
+            "Exclude": true
+        },
+        {
+            "Name": "Per1Age",
+            "Map": "Per1Age",
+            "Exclude": true
+        },
+        {
+            "Name": "ChAge",
+            "Map": "ChAge",
+            "Exclude": true
+        },
+        {
+            "Name": "ChRacAI",
+            "Map": "ChRacAI",
+            "Exclude": true
+        },
+        {
+            "Name": "ChRacAs",
+            "Map": "ChRacAs",
+            "Exclude": true
+        },
+        {
+            "Name": "ChRacBl",
+            "Map": "ChRacBl",
+            "Exclude": true
+        },
+        {
+            "Name": "ChRacNH",
+            "Map": "ChRacNH",
+            "Exclude": true
+        },
+        {
+            "Name": "ChRacWh",
+            "Map": "ChRacWh",
+            "Exclude": true
+        },
+        {
+            "Name": "ChRacUd",
+            "Map": "ChRacUd",
+            "Exclude": true
+        },
+        {
+            "Name": "CdAlc",
+            "Map": "CdAlc",
+            "Exclude": true
+        },
+        {
+            "Name": "CdDrug",
+            "Map": "CdDrug",
+            "Exclude": true
+        },
+        {
+            "Name": "CdRtrd",
+            "Map": "CdRtrd",
+            "Exclude": true
+        },
+        {
+            "Name": "CdEmotnl",
+            "Map": "CdEmotnl",
+            "Exclude": true
+        },
+        {
+            "Name": "CdVisual",
+            "Map": "CdVisual",
+            "Exclude": true
+        },
+        {
+            "Name": "CdLearn",
+            "Map": "CdLearn",
+            "Exclude": true
+        },
+        {
+            "Name": "CdPhys",
+            "Map": "CdPhys",
+            "Exclude": true
+        },
+        {
+            "Name": "CdBehav",
+            "Map": "CdBehav",
+            "Exclude": true
+        },
+        {
+            "Name": "CdMedicl",
+            "Map": "CdMedicl",
+            "Exclude": true
+        }
+    ]
+}

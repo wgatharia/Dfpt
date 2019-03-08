@@ -21,7 +21,7 @@ class NcandsNational(NcandsBase):
                 output_line+= 1
                 file_data[output_line] = d
         #transform data
-        transformed = self.TransformData(file_data)
+        transformed = self.TransformData(file_data, "outputmap\\NcandsNationalConfig.json")
         #write deduped file
         self.WriteDetailFile(transformed)
         #write summary
@@ -62,5 +62,11 @@ class NcandsNational(NcandsBase):
         #add DQ fields
         for field in self.Ncands_DQ_Columns:
             d[field] = self.GetNcandsDQ(field, d)
-    
+        #add  missing
+            d["ChBdate"] = None
+            d["IncidDt"] = None
+            d["RptDispDt"] = None
+            d["SuprvID"] = None
+            d["WrkrID"] = None
+            d["RptCnty"] = self.GetRptCnty(line["RptCnty"])
         return d

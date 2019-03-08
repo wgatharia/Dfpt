@@ -4,6 +4,7 @@ import json
 from strategy.afcarsstate import AfcarsState
 from strategy.afcarsnational import AfcarsNational
 from strategy.ncandsstate import NcandsState
+from strategy.ncandsnational import NcandsNational
 
 #returns jursidcition id from state code. reads from json file
 def get_state_jurisdiction_id_from_state_code(state_code):
@@ -35,9 +36,10 @@ def GetFileMetaData(fileToProcess):
                 file_meta_data['FileType'] = "AfcarsNational"
             elif file[0] == 'NC' and file[1] == 'S':
                 file_meta_data['FileType'] = "NcandsState"
-            else:
+            elif file[0] == 'NC' and file[1] == 'N':
                 file_meta_data['FileType'] = "NcandsNational"
-
+            else:
+                raise Exception("Invalid file.{0}".format(fileToProcess))
             return file_meta_data
         else:
             raise Exception("Invalid file.{0}".format(fileToProcess))
@@ -69,7 +71,7 @@ def main():
                     ncands = NcandsState(**file_meta_data)
                     ncands.ProcessFile(file)
                 elif file_meta_data['FileType'] == "NcandsNational":
-                    ncands = NcandsState(**file_meta_data)
+                    ncands = NcandsNational(**file_meta_data)
                     ncands.ProcessFile(file)
                 else:
                      raise Exception("Unsupported file type.{0}".format(file_meta_data['FileType']))
