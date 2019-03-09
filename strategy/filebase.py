@@ -12,6 +12,14 @@ class FileBase(ABC):
         #create export folder if it does not exists
         if not os.path.exists(self.FileMetaData['ExportFolder']):
             os.makedirs(self.FileMetaData['ExportFolder'])
+        #store jurisdictions in memory
+        with open("Data\\jurisdictions.json", 'r') as f:
+            self.Jurisdictions = json.load(f)["Jurisdictions"]
+        f.close()
+        #transforms
+        with open("statistics\\transforms.json", 'r') as f:
+            self.Transforms = json.load(f)
+        f.close()
 
     @abstractmethod
     def ProcessFile(self, file):
@@ -37,10 +45,20 @@ class FileBase(ABC):
     
     @property
     def Transforms(self):
-        with open("statistics\\transforms.json", 'r') as f:
-            self._transforms = json.load(f)
-        f.close()
         return self._transforms
+
+    @Transforms.setter
+    def Transforms(self, transforms):
+        self._transforms = transforms
+    
+
+    @property
+    def Jurisdictions(self):
+        return self._jurisdictions
+
+    @Jurisdictions.setter
+    def Jurisdictions(self, jurisdictions):
+        self._jurisdictions = jurisdictions
 
     #This method builds files statistics
     def BuildStatistics(self, source_data, statistics_config_file):

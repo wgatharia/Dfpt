@@ -144,10 +144,7 @@ class NcandsBase(FileBase):
 
     # returns jursidcition id from state code. reads from json file
     def GetStateJurisdictionID(self, state_code):
-        with open("Data\\jurisdictions.json", 'r') as f:
-            jurisdictions = json.load(f)["Jurisdictions"]
-        f.close()
-        for jurisdiction in jurisdictions:
+        for jurisdiction in self.Jurisdictions:
             if jurisdiction["JurisdictionCode"] == state_code:
                 return jurisdiction["JurisdictionId"]
         return "00000"
