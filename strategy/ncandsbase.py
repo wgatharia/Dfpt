@@ -24,7 +24,7 @@ class NcandsBase(FileBase):
             return 0
 
     def GetRptCnty(self, rptCnty):
-        state = self.GetStateJurisdictionID(self.FileMetaData["StateCode"])[:2]
+        state = self.StateJurisdictionID[:2]
         if rptCnty == "-1":
             return state + "xxx"
         elif rptCnty == "99":
@@ -69,16 +69,14 @@ class NcandsBase(FileBase):
                 if fld["Map"] in ["ChildGenderCode", "Per1SexID", "Per2SexID", "Per3SexID"]:
                     data[fld["Map"]] = self.GetGenderCode(fld["Name"], line)
                 elif fld["Map"] == "AgencyJurisdictionID":
-                    data[fld["Map"]] = line[fld["Name"]] if len(line[fld["Name"]]) == 5 else self.GetStateJurisdictionID(
-                        self.FileMetaData["StateCode"])[:2] + line[fld["Name"]]
+                    data[fld["Map"]] = line[fld["Name"]] if len(line[fld["Name"]]) == 5 else self.StateJurisdictionID[:2] + line[fld["Name"]]
                 elif fld["Map"] in ["Per1AgeID", "Per2AgeID", "Per3AgeID", "Per1Age", "Per2Age", "Per3Age"]:
                     data[fld["Map"]] = self.GetAdjustedPerAge(
                         line[fld["Name"]])
                 elif fld["Map"] in ["Per1RelID", "Per2RelID", "Per3RelID"]:
                     data[fld["Map"]] = -2 if line[fld["Name"]] == 99 else line[fld["Name"]]
                 elif fld["Map"] == "StateJurisdictionID":
-                    data[fld["Map"]] = self.GetStateJurisdictionID(
-                        line[fld["Name"]])
+                    data[fld["Map"]] = self.StateJurisdictionID
                 elif fld["Map"] == "ChAgeID" or fld["Map"] == "ChAge":
                     data[fld["Map"]] = -1 if line[fld["Name"]] == 77 else -2 if line[fld["Name"]] > 21 else line[fld["Name"]]
                 elif fld["Map"] in ["CdAlcID", "CdBehavID", "CdDrugID", "CdEmotnlID", "CdLearnID", "CdMediclID", "CdPhysID", "CdRtrdID", "CdVisualID",
@@ -141,13 +139,6 @@ class NcandsBase(FileBase):
             return dt
         except:
             return ''
-
-    # returns jursidcition id from state code. reads from json file
-    def GetStateJurisdictionID(self, state_code):
-        for jurisdiction in self.Jurisdictions:
-            if jurisdiction["JurisdictionCode"] == state_code:
-                return jurisdiction["JurisdictionId"]
-        return "00000"
 
     # build distributions
     def BuildColumnDistributions(self, transformed):

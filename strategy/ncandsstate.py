@@ -37,7 +37,7 @@ class NcandsState(NcandsBase):
             else:
                 d[field] = 0
         #add RptVictim
-        d["RptVictim"] =  1 if d["MalDeath"] == 1 or d["Mal1Lev"] in [1, 2, 3] or d["Mal2Lev"] in [1, 2, 3]or d["Mal3Lev"] in [1, 2, 3] or d["Mal4Lev"] in [1, 2, 3] else 0
+        d["RptVictim"] =  1 if d.get("MalDeath", None) == 1 or d.get("Mal1Lev", None) in [1, 2, 3] or d.get("Mal2Lev") in [1, 2, 3]or d.get("Mal3Lev") in [1, 2, 3] or d.get("Mal4Lev") in [1, 2, 3] else 0
         return d
     
     def ProcessFile(self, file):
@@ -45,7 +45,7 @@ class NcandsState(NcandsBase):
         
         file_data = {}
         #read source file
-        with open(self.concatString(self.FileMetaData['SourceFolder'], file), mode="rt") as f:
+        with open(self.concatString(self.FileMetaData.get('SourceFolder', None), file), mode="rt") as f:
             pos = 0
             output_line = 0
             for line in f:

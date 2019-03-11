@@ -12,8 +12,8 @@ def get_state_jurisdiction_id_from_state_code(state_code):
         jurisdictions = json.load(f)["Jurisdictions"]
     f.close()    
     for jurisdiction in jurisdictions:
-        if jurisdiction["JurisdictionCode"] == state_code:
-            return jurisdiction["JurisdictionId"]
+        if jurisdiction.get("JurisdictionCode", None) == state_code:
+            return jurisdiction.get("JurisdictionId", None)
     return "00000"
 
 #creates file metadata object
@@ -61,20 +61,22 @@ def main(sourcePath):
                 file_meta_data['SourceFolder'] = sourceFolder
                 file_meta_data['ExportFolder'] = exportFolder
 
-                if file_meta_data['FileType'] == "AfcarsState":
+                file_type = file_meta_data.get('FileType', None)
+
+                if file_type == "AfcarsState":
                     afcars = AfcarsState(**file_meta_data)
                     afcars.ProcessFile(file)
-                elif file_meta_data['FileType'] == "AfcarsNational":
+                elif file_type == "AfcarsNational":
                     afcars = AfcarsNational(**file_meta_data)
                     afcars.ProcessFile(file)
-                elif file_meta_data['FileType'] == "NcandsState":
+                elif file_type == "NcandsState":
                     ncands = NcandsState(**file_meta_data)
                     ncands.ProcessFile(file)
-                elif file_meta_data['FileType'] == "NcandsNational":
+                elif file_type == "NcandsNational":
                     ncands = NcandsNational(**file_meta_data)
                     ncands.ProcessFile(file)
                 else:
-                     raise Exception("Unsupported file type.{0}".format(file_meta_data['FileType']))
+                     raise Exception("Unsupported file type.{0}".format(file_type))
 #program entry point
 if __name__ == "__main__":
     if len(sys.argv) == 2:

@@ -87,7 +87,7 @@ class AfcarsBase(FileBase):
                 elif fld["Map"] == "ReportPeriodEndDate":
                     data[fld["Map"]] = self.GetReportPeriodEndDate(line)
                 elif fld["Map"] == "StateJurisdictionID":
-                    data[fld["Map"]] = self.GetStateJurisdictionID(line)
+                    data[fld["Map"]] = self.StateJurisdictionID
                 elif fld["Map"] == "DischargeReasonID":
                     data[fld["Map"]] = -2 if line[fld["Name"]] == 99 else line[fld["Name"]]
                 elif fld["Map"] == "IsEnteredFosterCareDuringFiscalID" \
@@ -147,13 +147,7 @@ class AfcarsBase(FileBase):
         if month == 3 and fiscalyear < year:
             return "09/30/" + str(fiscalyear)
         return "09/30/" + str(year)
-    #returns jurisdiction id from state
-    def GetStateJurisdictionID(self, line):
-        m_state = line["STATE"]
-        state = str(m_state)
-        if m_state < 10:
-            state = "0" + state
-        return state + "000"
+
     #function for parsing dates
     def ParseDate(self, dt):
         try:

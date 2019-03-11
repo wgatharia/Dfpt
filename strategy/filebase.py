@@ -10,17 +10,29 @@ class FileBase(ABC):
     def __init__(self, **kwargs):
         self.FileMetaData = kwargs
         #create export folder if it does not exists
-        if not os.path.exists(self.FileMetaData['ExportFolder']):
-            os.makedirs(self.FileMetaData['ExportFolder'])
+        _exportFolder = self.FileMetaData.get('ExportFolder', None)
+
+        if _exportFolder is not None:
+            if not os.path.exists(_exportFolder):
+                os.makedirs(_exportFolder)
+        else:
+            raise Exception("Export Folder is not set.")
         #store jurisdictions in memory
         with open("Data\\jurisdictions.json", 'r') as f:
             self.Jurisdictions = json.load(f)["Jurisdictions"]
+            #set state jurisdiction id
+            for jurisdiction in self.Jurisdictions:
+                if jurisdiction.get("JurisdictionCode", None) == self.FileMetaData.get('StateCode', None):
+                    self.StateJurisdictionID = jurisdiction.get("JurisdictionId", None)
         f.close()
+        #store counties in memory
+        with open("Data\\counties.json", 'r') as f:
+            self.Counties = json.load(f)["Counties"]
+        f.close()        
         #transforms
         with open("statistics\\transforms.json", 'r') as f:
             self.Transforms = json.load(f)
         f.close()
-
     @abstractmethod
     def ProcessFile(self, file):
         print('process from base')
@@ -59,7 +71,23 @@ class FileBase(ABC):
     @Jurisdictions.setter
     def Jurisdictions(self, jurisdictions):
         self._jurisdictions = jurisdictions
+    
+    @property
+    def Counties(self):
+        return self._counties
 
+    @Counties.setter
+    def Counties(self, counties):
+        self._counties = counties
+
+    @property
+    def StateJurisdictionID(self):
+        return self._state_jurisdiction_id
+
+    @StateJurisdictionID.setter
+    def StateJurisdictionID(self, state_jurisdiction_id):
+        self._state_jurisdiction_id = state_jurisdiction_id
+    
     #This method builds files statistics
     def BuildStatistics(self, source_data, statistics_config_file):
         file_statistics = {}
@@ -71,7 +99,7 @@ class FileBase(ABC):
         f.close()
         #DQ Fields
         for fld in statisticsMap:
-            if fld["Map"].startswith("DQ"):
+            if fld.get("Map", None).startswith("DQ"):
                 statistics[fld["Map"]] = 0
         for key in source_data:
             data = source_data[key]
@@ -113,14 +141,14 @@ class FileBase(ABC):
             for r in result:
                 _value = self.TransformFieldValues(key, r)
                 distributions_for_key[r] = {
-                    'DataSourceType': self.FileMetaData['DataSourceType'],
-                    'StateNationalCode': self.FileMetaData['StateNationalCode'],
-                    'StateCode': self.FileMetaData['StateCode'],
-                    'FiscalYear': self.FileMetaData['FiscalYear'],
-                    'PeriodCode': self.FileMetaData['PeriodCode'],
+                    'DataSourceType': self.FileMetaData.get('DataSourceType', None),
+                    'StateNationalCode': self.FileMetaData.get('StateNationalCode', None),
+                    'StateCode': self.FileMetaData.get('StateCode', None),
+                    'FiscalYear': self.FileMetaData.get('FiscalYear', None),
+                    'PeriodCode': self.FileMetaData.get('PeriodCode', None),
                     'PeriodEndDate': self.ReportPeriodEndDate,
                     'Name': key, 
-                    'Value': self.TransformFieldValues(key, r), 
+                    'Value': _value, 
                     'Count': result[r], 
                     'Percent': ("%.2f" % round(100*result[r]/len(output), 2))
                 }
@@ -138,11 +166,11 @@ class FileBase(ABC):
 
         #write output
         outputFile = "{0}_{1}_{2}_{3}_{4}_D.csv".format(\
-                self.FileMetaData["DataSourceType"],\
-                self.FileMetaData["StateNationalCode"],\
-                self.FileMetaData["StateCode"],\
-                self.FileMetaData["FiscalYear"],\
-                self.FileMetaData["PeriodCode"])
+                self.FileMetaData.get("DataSourceType", None),\
+                self.FileMetaData.get("StateNationalCode", None),\
+                self.FileMetaData.get("StateCode", None),\
+                self.FileMetaData.get("FiscalYear", None),\
+                self.FileMetaData.get("PeriodCode", None))
 
         print("Writing detail file ..", outputFile)
         outputFile = self.concatString(self.FileMetaData['ExportFolder'] , outputFile)
@@ -167,11 +195,11 @@ class FileBase(ABC):
 
         print("Writing summary file ..")
         outputFile = "{0}_{1}_{2}_{3}_{4}_S.csv".format(\
-            self.FileMetaData["DataSourceType"],\
-            self.FileMetaData["StateNationalCode"],\
-            self.FileMetaData["StateCode"],\
-            self.FileMetaData["FiscalYear"],\
-            self.FileMetaData["PeriodCode"])
+                self.FileMetaData.get("DataSourceType", None),\
+                self.FileMetaData.get("StateNationalCode", None),\
+                self.FileMetaData.get("StateCode", None),\
+                self.FileMetaData.get("FiscalYear", None),\
+                self.FileMetaData.get("PeriodCode", None))
 
         outputFile = self.concatString(self.FileMetaData['ExportFolder'] , outputFile)
 
@@ -191,12 +219,12 @@ class FileBase(ABC):
     def WriteColumnDistibutionsFile(self, distributions, type):    
         field_names = ['DataSourceType', 'StateNationalCode', 'StateCode', 'FiscalYear', 'PeriodCode', 'PeriodEndDate', 'Name', 'Value', 'Count', 'Percent']
         outputFile = "{0}_{1}_{2}_{3}_{4}_{5}.csv".format(\
-            self.FileMetaData["DataSourceType"],\
-            self.FileMetaData["StateNationalCode"],\
-            self.FileMetaData["StateCode"],\
-            self.FileMetaData["FiscalYear"],\
-            self.FileMetaData["PeriodCode"],
-            type)
+                self.FileMetaData.get("DataSourceType", None),\
+                self.FileMetaData.get("StateNationalCode", None),\
+                self.FileMetaData.get("StateCode", None),\
+                self.FileMetaData.get("FiscalYear", None),\
+                self.FileMetaData.get("PeriodCode", None),
+                type)
 
         print('Writing column distributions file ..', outputFile)
         outputFile = self.concatString(self.FileMetaData['ExportFolder'] , outputFile)
@@ -236,10 +264,15 @@ class FileBase(ABC):
 
     #function to transform statistics
     def TransformFieldValues(self, field, value):
-
-        data = self.Transforms.get(field, None)
-        if data is not None:
-            transform = data.get(str(value), None)
-            if transform is not None:
-                return transform
+        data = None
+        if field in ['RptCnty', 'FIPSCODE']:
+            for county in self.Counties:
+                if county["JurisdictionID"][:2] == self.StateJurisdictionID[:2] and county["JurisdictionID"][-3:] == value[-3:]:
+                    return county["JurisdictionName"]
+        else:
+            data = self.Transforms.get(field, None)
+            if data is not None:
+                transform = data.get(str(value), None)
+                if transform is not None:
+                    return transform
         return value
