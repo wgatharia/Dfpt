@@ -92,7 +92,7 @@
     },
     {
       "Description": "Report Disposition Date",
-      "Name": "RpDispDt",
+      "Name": "RptDispDt",
       "Width": 11,
       "Value": null,
       "Type": "datetime"

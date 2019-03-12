@@ -1,6 +1,7 @@
 import os
 import json
 import sys
+import datetime
 from strategy.afcarsstate import AfcarsState
 from strategy.afcarsnational import AfcarsNational
 from strategy.ncandsstate import NcandsState
@@ -54,29 +55,41 @@ def main(sourcePath):
 
     if os.path.exists(sourceFolder):   
         files = os.listdir(sourceFolder)
-        for file in files:
-            fileToProcess = file.split('_')
-            if len(fileToProcess) == 6 and ( len(file.split('.')[0]) == 16 or len(file.split('.')[0]) == 22):
-                file_meta_data = GetFileMetaData(file)
-                file_meta_data['SourceFolder'] = sourceFolder
-                file_meta_data['ExportFolder'] = exportFolder
+        if len(files) > 0:
+            for file in files:
+                fileToProcess = file.split('_')
+                if len(fileToProcess) == 6 and ( len(file.split('.')[0]) == 16 or len(file.split('.')[0]) == 22):
+                    start = datetime.datetime.now()
+                    print("Start Processing ", file, " at " , start)
+                    file_meta_data = GetFileMetaData(file)
+                    file_meta_data['SourceFolder'] = sourceFolder
+                    file_meta_data['ExportFolder'] = exportFolder
 
-                file_type = file_meta_data.get('FileType', None)
+                    file_type = file_meta_data.get('FileType', None)
 
-                if file_type == "AfcarsState":
-                    afcars = AfcarsState(**file_meta_data)
-                    afcars.ProcessFile(file)
-                elif file_type == "AfcarsNational":
-                    afcars = AfcarsNational(**file_meta_data)
-                    afcars.ProcessFile(file)
-                elif file_type == "NcandsState":
-                    ncands = NcandsState(**file_meta_data)
-                    ncands.ProcessFile(file)
-                elif file_type == "NcandsNational":
-                    ncands = NcandsNational(**file_meta_data)
-                    ncands.ProcessFile(file)
+                    if file_type == "AfcarsState":
+                        afcars = AfcarsState(**file_meta_data)
+                        afcars.ProcessFile(file)
+                    elif file_type == "AfcarsNational":
+                        afcars = AfcarsNational(**file_meta_data)
+                        afcars.ProcessFile(file)
+                    elif file_type == "NcandsState":
+                        ncands = NcandsState(**file_meta_data)
+                        ncands.ProcessFile(file)
+                    elif file_type == "NcandsNational":
+                        ncands = NcandsNational(**file_meta_data)
+                        ncands.ProcessFile(file)
+                    else:
+                        raise Exception("Unsupported file type.{0}".format(file_type))
+                    end = datetime.datetime.now()
+                    elapsed = end - start
+                    print("Completed Processing ", file, " at " , end)
+                    print("Processing took: ", elapsed)
                 else:
-                     raise Exception("Unsupported file type.{0}".format(file_type))
+                    print("Cannot process invalid file: ", file)
+        else:
+            print("No files to process in: ", sourceFolder)
+
 #program entry point
 if __name__ == "__main__":
     if len(sys.argv) == 2:

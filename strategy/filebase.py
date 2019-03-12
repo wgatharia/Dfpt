@@ -11,10 +11,13 @@ class FileBase(ABC):
         self.FileMetaData = kwargs
         #create export folder if it does not exists
         _exportFolder = self.FileMetaData.get('ExportFolder', None)
-
+        
         if _exportFolder is not None:
-            if not os.path.exists(_exportFolder):
-                os.makedirs(_exportFolder)
+            self.StateFolder = self.concatString(_exportFolder, self.FileMetaData.get('StateCode', None), "\\")
+            self.StatisticsFolder = self.StateFolder + "Statistics\\"
+            self.TrendDataFolder = self.StateFolder + "TrendData\\"
+            os.makedirs(self.StatisticsFolder, exist_ok=True)
+            os.makedirs(self.TrendDataFolder, exist_ok=True)
         else:
             raise Exception("Export Folder is not set.")
         #store jurisdictions in memory
@@ -173,7 +176,7 @@ class FileBase(ABC):
                 self.FileMetaData.get("PeriodCode", None))
 
         print("Writing detail file ..", outputFile)
-        outputFile = self.concatString(self.FileMetaData['ExportFolder'] , outputFile)
+        outputFile = self.concatString(self.StateFolder , outputFile)
 
         csvfile = open(outputFile, "w", newline='', encoding="utf-8")
         with csvfile:
@@ -201,7 +204,7 @@ class FileBase(ABC):
                 self.FileMetaData.get("FiscalYear", None),\
                 self.FileMetaData.get("PeriodCode", None))
 
-        outputFile = self.concatString(self.FileMetaData['ExportFolder'] , outputFile)
+        outputFile = self.concatString(self.StateFolder, outputFile)
 
         statistics_file = open(outputFile, "w", newline='', encoding="utf-8")
         with statistics_file:
@@ -227,7 +230,7 @@ class FileBase(ABC):
                 type)
 
         print('Writing column distributions file ..', outputFile)
-        outputFile = self.concatString(self.FileMetaData['ExportFolder'] , outputFile)
+        outputFile = self.concatString(self.TrendDataFolder , outputFile)
         
         distributions_file = open(outputFile, "w", newline='', encoding="utf-8")
         with distributions_file:
@@ -239,8 +242,10 @@ class FileBase(ABC):
         
    
     #other functions
-    def concatString(self, x, y): 
-        z = "%s%s" % (x, y) 
+    def concatString(self, *strings): 
+        z = ""
+        for s in strings:
+            z = "%s%s" % (z, s)
         return z
     #function for parsing int
     def ParseInt(self, i):

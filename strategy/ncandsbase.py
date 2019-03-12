@@ -17,7 +17,7 @@ class NcandsBase(FileBase):
     #rules for data quality
     def GetNcandsDQ(self, fld, line):
         if fld == "DQ_NCANDS_MissingAge":
-            return 1 if line.get("ChAge", '') is '' or  line.get("ChAge", None) == 99 else 0
+            return 1 if line.get("ChAge", '') is '' or  line.get("ChAge", None) == 99 or  line.get("ChAge", None) == -2 else 0
         elif fld == "DQ_NCANDS_HasID":
             return 0 if line.get("ChID", '') is '' else 1
         else:
@@ -29,6 +29,10 @@ class NcandsBase(FileBase):
             return state + "xxx"
         elif rptCnty == "99":
             return state + "099"
+        elif len(rptCnty) == 2:
+            return '0' + rptCnty
+        elif len(rptCnty) == 1:
+            return '00' + rptCnty
         else:
             return rptCnty
             

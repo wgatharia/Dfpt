@@ -22,7 +22,8 @@ class NcandsState(NcandsBase):
                 d[fld["Name"]] = self.ParseNcandsDate(line[start:end])
             elif fld["Type"] == "int":
                 if "DefaultValue" in fld:
-                    d[fld["Name"]] = self.ParseInt(line[start:end])
+                    fieldValue = self.ParseInt(line[start:end])
+                    d[fld["Name"]] = -2 if fieldValue == 99 or ( fieldValue == 9 and fld["Name"] not in [ 'ChSex', 'ChAge', 'Per1Age', 'Per2Age', 'Per3Age', 'RptSrc', 'Notifs', 'ChLvng', 'Per1Rel', 'Per2Rel' ] ) else fieldValue
                 else:
                     d[fld["Name"]] = self.ParseNullableInt(line[start:end])
             else:      
