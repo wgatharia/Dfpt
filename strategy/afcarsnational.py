@@ -49,7 +49,9 @@ class AfcarsNational(AfcarsBase):
         self.WriteSummaryFile(transformed_a, "statistics\\afcarsstatistics.json")
         #build and write column distributions
         self.BuildColumnDistributions(transformed_a)
-
+        #build and write period a trend data
+        self.BuildTrendData(transformed_a)
+        
         """
             Period B
         """
@@ -60,6 +62,8 @@ class AfcarsNational(AfcarsBase):
         self.WriteSummaryFile(transformed_b, "statistics\\afcarsstatistics.json")
         #build and write column distributions
         self.BuildColumnDistributions(transformed_b)
+        #build and write period b trend data
+        self.BuildTrendData(transformed_b)
 
     def DictionaryGetCaseInsensitiveField(self, line, name):
         for key in line.keys():

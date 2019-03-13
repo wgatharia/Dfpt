@@ -71,5 +71,7 @@ class AfcarsState(AfcarsBase):
             self.WriteSummaryFile(transformed, "statistics\\afcarsstatistics.json")
             #build and write column distributions
             self.BuildColumnDistributions(transformed)
+            #build and write trend data
+            self.BuildTrendData(transformed)
         except Exception as e:
             print(e)     

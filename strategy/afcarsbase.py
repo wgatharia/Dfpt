@@ -202,7 +202,90 @@ class AfcarsBase(FileBase):
         string_distributions = self.CalculateColumnDistributions(output, self.AfcarsStringType)
         self.WriteColumnDistibutionsFile(string_distributions, "TS")
 
+    def CalculateInCareCounts(self, output, age=None):
+        #define locals to use for calculating counts
+        report_periodend_date = datetime.strptime(self.ReportPeriodEndDate, "%m/%d/%Y")
+        default_date = datetime.strptime('12/31/9999', "%m/%d/%Y")
 
+        incare = {}
+
+        for key in output:
+            data = output[key]
+            record_id =  data.get('RecordID', None)
+
+            discharge_date = data.get('DischargeDate', None)
+            discharge_date = default_date if discharge_date is None or len(discharge_date) == 0 else datetime.strptime(discharge_date, "%m/%d/%Y")
+            
+            dob = data.get('BirthDate', None)
+            dob = default_date if dob is None or len(dob) == 0 else datetime.strptime(dob, "%m/%d/%Y")
+
+            latest_removal_date = data.get('LatestRemovalDate', None)
+            latest_removal_date = default_date if latest_removal_date is None or len(latest_removal_date) == 0 else datetime.strptime(latest_removal_date, "%m/%d/%Y")
+
+            if age == 18 and latest_removal_date <= report_periodend_date and \
+                dob + timedelta(days=18*365.25) > report_periodend_date and \
+                discharge_date > report_periodend_date:
+                    incare[record_id] = record_id
+            if age is None and latest_removal_date <= report_periodend_date and discharge_date > report_periodend_date:
+                incare[record_id] = record_id
+        return len(incare)
+
+    def BuildTrendData(self, transformed):
+        output = transformed["Output"]
+        trend_data = {}
+        #calculate record number distributions
+        recordid_distributions = self.CalculateColumnDistributions(output, ['RecordID'])
+        dupes = 0
+        for key in recordid_distributions:
+            if recordid_distributions[key].get('Count') > 1:
+                dupes += 1
+        
+        trend_data[0] = {
+                    'DataSourceType': self.FileMetaData.get('DataSourceType', None),
+                    'StateNationalCode': self.FileMetaData.get('StateNationalCode', None),
+                    'StateCode': self.FileMetaData.get('StateCode', None),
+                    'FiscalYear': self.FileMetaData.get('FiscalYear', None),
+                    'PeriodCode': self.FileMetaData.get('PeriodCode', None),
+                    'PeriodEndDate': self.ReportPeriodEndDate,
+                    'Name': 'Check,Duplicate', 
+                    'Value': dupes
+        }
+
+        trend_data[1] = {
+                    'DataSourceType': self.FileMetaData.get('DataSourceType', None),
+                    'StateNationalCode': self.FileMetaData.get('StateNationalCode', None),
+                    'StateCode': self.FileMetaData.get('StateCode', None),
+                    'FiscalYear': self.FileMetaData.get('FiscalYear', None),
+                    'PeriodCode': self.FileMetaData.get('PeriodCode', None),
+                    'PeriodEndDate': self.ReportPeriodEndDate,
+                    'Name': 'Check,Unique', 
+                    'Value': len(recordid_distributions)
+        }
+
+        trend_data[2] = {
+                    'DataSourceType': self.FileMetaData.get('DataSourceType', None),
+                    'StateNationalCode': self.FileMetaData.get('StateNationalCode', None),
+                    'StateCode': self.FileMetaData.get('StateCode', None),
+                    'FiscalYear': self.FileMetaData.get('FiscalYear', None),
+                    'PeriodCode': self.FileMetaData.get('PeriodCode', None),
+                    'PeriodEndDate': self.ReportPeriodEndDate,
+                    'Name': 'In Care,Under Age 18', 
+                    'Value': self.CalculateInCareCounts(output, 18)
+        }
+
+        trend_data[3] = {
+                    'DataSourceType': self.FileMetaData.get('DataSourceType', None),
+                    'StateNationalCode': self.FileMetaData.get('StateNationalCode', None),
+                    'StateCode': self.FileMetaData.get('StateCode', None),
+                    'FiscalYear': self.FileMetaData.get('FiscalYear', None),
+                    'PeriodCode': self.FileMetaData.get('PeriodCode', None),
+                    'PeriodEndDate': self.ReportPeriodEndDate,
+                    'Name': 'In Care,All Ages', 
+                    'Value': self.CalculateInCareCounts(output)
+        }
+
+        #write
+        self.WriteStoreMeasures(trend_data, '6M')
 
     @property
     def AfcarsNullIntType(self):

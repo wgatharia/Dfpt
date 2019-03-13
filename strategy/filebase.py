@@ -214,10 +214,28 @@ class FileBase(ABC):
         statistics_file.close()
 
     #write store measures
-    def WriteStoreMeasures(self):
-        print('write store measures from base')
-        pass
+    def WriteStoreMeasures(self, trenddata, type):
+        print('writing store measures..')
+        field_names = ['DataSourceType', 'StateNationalCode', 'StateCode', 'FiscalYear', 'PeriodCode', 'PeriodEndDate', 'Name', 'Value', 'Count']
+        outputFile = "{0}_{1}_{2}_{3}_{4}_{5}.csv".format(\
+                self.FileMetaData.get("DataSourceType", None),\
+                self.FileMetaData.get("StateNationalCode", None),\
+                self.FileMetaData.get("StateCode", None),\
+                self.FileMetaData.get("FiscalYear", None),\
+                self.FileMetaData.get("PeriodCode", None),
+                "Store_" + type)
 
+        print('Writing store measures file ..', outputFile)
+        outputFile = self.concatString(self.TrendDataFolder , outputFile)
+        
+        store_measures_file = open(outputFile, "w", newline='', encoding="utf-8")
+        with store_measures_file:
+            writer = csv.DictWriter(store_measures_file, fieldnames=field_names)
+            #writer.writeheader()
+            for i in trenddata:
+                writer.writerow(trenddata[i])
+        store_measures_file.close()
+    
     #write distributions
     def WriteColumnDistibutionsFile(self, distributions, type):    
         field_names = ['DataSourceType', 'StateNationalCode', 'StateCode', 'FiscalYear', 'PeriodCode', 'PeriodEndDate', 'Name', 'Value', 'Count', 'Percent']
@@ -230,7 +248,7 @@ class FileBase(ABC):
                 type)
 
         print('Writing column distributions file ..', outputFile)
-        outputFile = self.concatString(self.TrendDataFolder , outputFile)
+        outputFile = self.concatString(self.StatisticsFolder , outputFile)
         
         distributions_file = open(outputFile, "w", newline='', encoding="utf-8")
         with distributions_file:
