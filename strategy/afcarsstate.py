@@ -66,12 +66,15 @@ class AfcarsState(AfcarsBase):
             transformed = self.TransformData(deduped_data)
             #write deduped file
             self.WriteDetailFile(transformed)
+            #partitioned data
+            partitioned_data = self.BuildPartitionedData(transformed)
+            transformed.clear()      
             #write unduped file
             #WriteDetailFile(file_meta_data)
-            self.WriteSummaryFile(transformed, "statistics\\afcarsstatistics.json")
+            self.WriteSummaryFile(partitioned_data, "statistics\\afcarsstatistics.json")
             #build and write column distributions
-            self.BuildColumnDistributions(transformed)
+            self.BuildColumnDistributions(partitioned_data)
             #build and write trend data
-            self.BuildTrendData(transformed)
+            self.BuildTrendData(partitioned_data)
         except Exception as e:
             print(e)     

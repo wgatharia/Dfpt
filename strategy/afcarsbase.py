@@ -188,29 +188,31 @@ class AfcarsBase(FileBase):
         else:
             return 0
     #build distributions
-    def BuildColumnDistributions(self, transformed):
-        output = transformed["Output"]
+    def BuildColumnDistributions(self, partitioned):
         #calculate null int distributions
-        nullint_distributions = self.CalculateColumnDistributions(output, self.AfcarsNullIntType)
+        nullint_distributions = self.CalculateColumnDistributions(partitioned, self.AfcarsNullIntType)
         self.WriteColumnDistibutionsFile(nullint_distributions, "TNI")
 
         #calculate null int distributions
-        int_distributions = self.CalculateColumnDistributions(output, self.AfcarsIntType)
+        int_distributions = self.CalculateColumnDistributions(partitioned, self.AfcarsIntType)
         self.WriteColumnDistibutionsFile(int_distributions, "TI")
         
         #calculate null int distributions
-        string_distributions = self.CalculateColumnDistributions(output, self.AfcarsStringType)
+        string_distributions = self.CalculateColumnDistributions(partitioned, self.AfcarsStringType)
         self.WriteColumnDistibutionsFile(string_distributions, "TS")
 
-    def CalculateInCareCounts(self, output, age=None):
+    def BuildPartitionedData(self, transformed):
+        return transformed["Output"]
+
+    def CalculateInCareCounts(self, partitioned, age=None):
         #define locals to use for calculating counts
         report_periodend_date = datetime.strptime(self.ReportPeriodEndDate, "%m/%d/%Y")
         default_date = datetime.strptime('12/31/9999', "%m/%d/%Y")
 
         incare = {}
 
-        for key in output:
-            data = output[key]
+        for key in partitioned:
+            data = partitioned[key]
             record_id =  data.get('RecordID', None)
 
             discharge_date = data.get('DischargeDate', None)
@@ -230,11 +232,10 @@ class AfcarsBase(FileBase):
                 incare[record_id] = record_id
         return len(incare)
 
-    def BuildTrendData(self, transformed):
-        output = transformed["Output"]
+    def BuildTrendData(self, trend_source):
         trend_data = {}
         #calculate record number distributions
-        recordid_distributions = self.CalculateColumnDistributions(output, ['RecordID'])
+        recordid_distributions = self.CalculateColumnDistributions(trend_source, ['RecordID'])
         dupes = 0
         for key in recordid_distributions:
             if recordid_distributions[key].get('Count') > 1:
@@ -270,7 +271,7 @@ class AfcarsBase(FileBase):
                     'PeriodCode': self.FileMetaData.get('PeriodCode', None),
                     'PeriodEndDate': self.ReportPeriodEndDate,
                     'Name': 'In Care,Under Age 18', 
-                    'Value': self.CalculateInCareCounts(output, 18)
+                    'Value': self.CalculateInCareCounts(trend_source, 18)
         }
 
         trend_data[3] = {
@@ -281,7 +282,7 @@ class AfcarsBase(FileBase):
                     'PeriodCode': self.FileMetaData.get('PeriodCode', None),
                     'PeriodEndDate': self.ReportPeriodEndDate,
                     'Name': 'In Care,All Ages', 
-                    'Value': self.CalculateInCareCounts(output)
+                    'Value': self.CalculateInCareCounts(trend_source)
         }
 
         #write

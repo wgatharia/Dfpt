@@ -45,12 +45,15 @@ class AfcarsNational(AfcarsBase):
         self.FileMetaData['PeriodCode']  = 'A'
         transformed_a = self.TransformData(period_a_data)
         self.WriteDetailFile(transformed_a)
+        #partitioned data
+        partitioned_data_a = self.BuildPartitionedData(transformed_a)
+        transformed_a.clear()      
         #write stats
-        self.WriteSummaryFile(transformed_a, "statistics\\afcarsstatistics.json")
+        self.WriteSummaryFile(partitioned_data_a, "statistics\\afcarsstatistics.json")
         #build and write column distributions
-        self.BuildColumnDistributions(transformed_a)
+        self.BuildColumnDistributions(partitioned_data_a)
         #build and write period a trend data
-        self.BuildTrendData(transformed_a)
+        self.BuildTrendData(partitioned_data_a)
         
         """
             Period B
@@ -58,12 +61,15 @@ class AfcarsNational(AfcarsBase):
         self.FileMetaData['PeriodCode']  = 'B'
         transformed_b = self.TransformData(period_b_data)
         self.WriteDetailFile(transformed_b)
+        #partitioned data
+        partitioned_data_b = self.BuildPartitionedData(transformed_b)
+        transformed_b.clear() 
         #write stats
-        self.WriteSummaryFile(transformed_b, "statistics\\afcarsstatistics.json")
+        self.WriteSummaryFile(partitioned_data_b, "statistics\\afcarsstatistics.json")
         #build and write column distributions
-        self.BuildColumnDistributions(transformed_b)
+        self.BuildColumnDistributions(partitioned_data_b)
         #build and write period b trend data
-        self.BuildTrendData(transformed_b)
+        self.BuildTrendData(partitioned_data_b)
 
     def DictionaryGetCaseInsensitiveField(self, line, name):
         for key in line.keys():
