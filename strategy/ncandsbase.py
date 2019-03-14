@@ -50,6 +50,11 @@ class NcandsBase(FileBase):
         elif age <= 0 or age >= 99:
             return -2
 
+    def ApplyDefaultIntegerRule(self, fld, fieldValue):
+        return -2 if ( fieldValue == 99 and fld["Name"] not in ['ChAge', 'Per1Rel', 'Per2Rel'] ) or ( fieldValue == 9 and \
+                            fld["Name"] not in [ 'ChSex', 'ChAge', 'Per1Age', 'Per2Age', 'Per3Age', 'RptSrc', 'Notifs', 'CEthn','ChLvng', 
+                                                'Per1Rel', 'Per2Rel', 'ChRacAI', 'ChRacAs', 'ChRacBl',  'ChRacNH', 'ChRacWh', 'ChRacUd',
+                                                'CdAlc', 'CdDrug', 'CdRtrd', 'CdEmotnl', 'CdVisual', 'CdLearn', 'CdPhys', 'CdBehav', 'CdMedicl' ] ) else fieldValue       
     # trasform data to output format
     def TransformData(self, deduped_data, output_map_file = "OutputMap\\NcandsStateConfig.json"):
         transformed = {}
@@ -81,7 +86,7 @@ class NcandsBase(FileBase):
                     data[fld["Map"]] = -2 if line[fld["Name"]] == 99 else line[fld["Name"]]
                 elif fld["Map"] == "StateJurisdictionID":
                     data[fld["Map"]] = self.StateJurisdictionID
-                elif fld["Map"] == "ChAgeID" or fld["Map"] == "ChAge":
+                elif fld["Map"] == "ChAgeID":
                     data[fld["Map"]] = -1 if line[fld["Name"]] == 77 else -2 if line[fld["Name"]] > 21 else line[fld["Name"]]
                 elif fld["Map"] in ["CdAlcID", "CdBehavID", "CdDrugID", "CdEmotnlID", "CdLearnID", "CdMediclID", "CdPhysID", "CdRtrdID", "CdVisualID",
                                     "ChMilID", "ChPriorID", "CoChRepID", "EducatnID", "EmployID", "FamPlanID", "FamPresID", "FamSupID", "FCAlcID", "FCDrugID", "FCEmotnlID",
@@ -145,21 +150,20 @@ class NcandsBase(FileBase):
             return ''
 
     # build distributions
-    def BuildColumnDistributions(self, transformed):
-        output = transformed["Output"]
+    def BuildColumnDistributions(self, partitioned):
         # calculate null int distributions
         nullint_distributions = self.CalculateColumnDistributions(
-            output, self.NcandsNullIntType)
+            partitioned, self.NcandsNullIntType)
         self.WriteColumnDistibutionsFile(nullint_distributions, "TNI")
 
         # calculate null int distributions
         int_distributions = self.CalculateColumnDistributions(
-            output, self.NcandsIntType)
+            partitioned, self.NcandsIntType)
         self.WriteColumnDistibutionsFile(int_distributions, "TI")
 
         # calculate null int distributions
         string_distributions = self.CalculateColumnDistributions(
-            output, self.NcandsStringType)
+            partitioned, self.NcandsStringType)
         self.WriteColumnDistibutionsFile(string_distributions, "TS")
 
     def BuildPartitionedData(self, transformed):
@@ -183,8 +187,8 @@ class NcandsBase(FileBase):
                 'SubYr': data.get("SubYr", None),
                 'RptSrc': data.get("RptSrc", None),
                 'RptDisp': data.get("RptDisp", None),
-                'Notifs': data.get("NotifsID", None),
-                'CEthn': data.get("CEthnID", None),
+                'Notifs': data.get("Notifs", None),
+                'CEthn': data.get("CEthn", None),
                 'ChLvng': data.get("ChLvng", None),
                 'ChMal1': data.get("ChMal1", None),
                 'ChMal2': data.get("ChMal2", None),

@@ -23,7 +23,7 @@ class NcandsState(NcandsBase):
             elif fld["Type"] == "int":
                 if "DefaultValue" in fld:
                     fieldValue = self.ParseInt(line[start:end])
-                    d[fld["Name"]] = -2 if fieldValue == 99 or ( fieldValue == 9 and fld["Name"] not in [ 'ChSex', 'ChAge', 'Per1Age', 'Per2Age', 'Per3Age', 'RptSrc', 'Notifs', 'ChLvng', 'Per1Rel', 'Per2Rel' ] ) else fieldValue
+                    d[fld["Name"]] =  self.ApplyDefaultIntegerRule(fld, fieldValue)
                 else:
                     d[fld["Name"]] = self.ParseNullableInt(line[start:end])
             else:      
@@ -60,13 +60,13 @@ class NcandsState(NcandsBase):
         transformed = self.TransformData(file_data)
         #write deduped file
         self.WriteDetailFile(transformed)
-        #write summary
-        self.WriteSummaryFile(transformed, "statistics\\ncandsstatistics.json")
-        #build and write column distributions
-        self.BuildColumnDistributions(transformed)
-        #build and write trend data
         #partitioned data
         partitioned_data = self.BuildPartitionedData(transformed)
         transformed.clear()      
+        #write summary
+        self.WriteSummaryFile(partitioned_data, "statistics\\ncandsstatistics.json")
+        #build and write column distributions
+        self.BuildColumnDistributions(partitioned_data)
+        #build and write trend data
         self.BuildTrendData(partitioned_data)
 

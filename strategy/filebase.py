@@ -189,9 +189,9 @@ class FileBase(ABC):
         
     
     #write summary file
-    def WriteSummaryFile(self, transformed, statistics_config_file):
+    def WriteSummaryFile(self, partitioned, statistics_config_file):
         print("Building Statistics ..")
-        statistics = self.BuildStatistics(transformed["Output"], statistics_config_file)
+        statistics = self.BuildStatistics(partitioned, statistics_config_file)
 
         field_names = statistics['FieldNames']
         file_statistics = statistics['FileStatistics']
