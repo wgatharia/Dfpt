@@ -29,7 +29,12 @@ class NcandsNational(NcandsBase):
         self.WriteSummaryFile(transformed, "statistics\\ncandsstatistics.json")
         #build and write column distributions
         self.BuildColumnDistributions(transformed)       
-
+        #build and write trend data
+        #partitioned data
+        partitioned_data = self.BuildPartitionedData(transformed)
+        transformed.clear()      
+        self.BuildTrendData(partitioned_data)
+        
     def DictionaryGetCaseInsensitiveField(self, line, name):
         for key in line.keys():
             if key.upper() == name.upper():
@@ -74,4 +79,6 @@ class NcandsNational(NcandsBase):
             d["SuprvID"] = None
             d["WrkrID"] = None
             d["RptCnty"] = self.GetRptCnty(line["RptCnty"])
+        #add RptVictim
+        d["RptVictim"] =  1 if d.get("MalDeath", None) == 1 or d.get("Mal1Lev", None) in [1, 2, 3] or d.get("Mal2Lev") in [1, 2, 3]or d.get("Mal3Lev") in [1, 2, 3] or d.get("Mal4Lev") in [1, 2, 3] else 0
         return d

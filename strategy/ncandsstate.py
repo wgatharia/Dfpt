@@ -64,4 +64,9 @@ class NcandsState(NcandsBase):
         self.WriteSummaryFile(transformed, "statistics\\ncandsstatistics.json")
         #build and write column distributions
         self.BuildColumnDistributions(transformed)
+        #build and write trend data
+        #partitioned data
+        partitioned_data = self.BuildPartitionedData(transformed)
+        transformed.clear()      
+        self.BuildTrendData(partitioned_data)
 

@@ -162,6 +162,107 @@ class NcandsBase(FileBase):
             output, self.NcandsStringType)
         self.WriteColumnDistibutionsFile(string_distributions, "TS")
 
+    def BuildPartitionedData(self, transformed):
+        output = transformed["Output"]
+        trend_source = {}
+        for key in output:
+            data = output[key]
+            trend_source[key] = {
+                'DataSourceType': data.get("DataSourceType", None),
+                'StateJurisdictionID': data.get("StateJurisdictionID", None),
+                'StateNationalCode': data.get("StateNationalCode", None),
+                'FiscalYear': data.get("FiscalYear", None),
+                'PeriodCode': data.get("PeriodCode", None),
+                'DQ_NCANDS_MissingAge': data.get("DQ_NCANDS_MissingAge", None),
+                'DQ_NCANDS_MissingAgePct': data.get("DQ_NCANDS_MissingAgePct", None),
+                'DQ_NCANDS_HasID': data.get("DQ_NCANDS_HasID", None),
+                'DQ_NCANDS_HasIDPct': data.get("DQ_NCANDS_HasIDPct", None),
+                'ChID': data.get("ChID", None),
+                'RptVictim': data.get("RptVictim", None),
+                'ChSex': data.get("ChSex", None),
+                'SubYr': data.get("SubYr", None),
+                'RptSrc': data.get("RptSrc", None),
+                'RptDisp': data.get("RptDisp", None),
+                'Notifs': data.get("NotifsID", None),
+                'CEthn': data.get("CEthnID", None),
+                'ChLvng': data.get("ChLvng", None),
+                'ChMal1': data.get("ChMal1", None),
+                'ChMal2': data.get("ChMal2", None),
+                'Per1Rel': data.get("Per1Rel", None),
+                'Per2Rel': data.get("Per2Rel", None),
+                'Per1Prnt': data.get("Per1Prnt", None),
+                'Per1Age': data.get("Per1Age", None),
+                'ChAge': data.get("ChAge", None),
+                'ChRacAI': data.get("ChRacAI", None),
+                'ChRacAs': data.get("ChRacAs", None),
+                'ChRacBl': data.get("ChRacBl", None),
+                'ChRacNH': data.get("ChRacNH", None),
+                'ChRacWh': data.get("ChRacWh", None),
+                'ChRacUd': data.get("ChRacUd", None),
+                'CdAlc': data.get("CdAlc", None),
+                'CdDrug': data.get("CdDrug", None),
+                'CdRtrd': data.get("CdRtrd", None),
+                'CdEmotnl': data.get("CdEmotnl", None),
+                'CdVisual': data.get("CdVisual", None),
+                'CdLearn': data.get("CdLearn", None),
+                'CdPhys': data.get("CdPhys", None),
+                'CdBehav': data.get("CdBehav", None),
+                'CdMedicl': data.get("CdMedicl", None),
+                'RptCnty': data.get("RptCnty", None)
+            }
+        return trend_source
+
+    def BuildTrendData(self, trend_source):
+        trend_data = {}
+        #calculate chid distributions
+        chid_distributions = self.CalculateColumnDistributions(trend_source, ['ChID'])
+        unique_child = len(chid_distributions)
+        total_child = len(trend_source)
+        #calculate Substantiated,Unique victims
+        victims = {}
+        for i in range(total_child, 0, -1):
+            data = trend_source[i]
+            chid = data.get('ChID', None)
+            if data.get('RptVictim') == 1:
+                victims[chid] = chid
+                trend_source.pop(i)
+
+        #add trend data.
+        trend_data[0] = {
+                    'DataSourceType': self.FileMetaData.get('DataSourceType', None),
+                    'StateNationalCode': self.FileMetaData.get('StateNationalCode', None),
+                    'StateCode': self.FileMetaData.get('StateCode', None),
+                    'FiscalYear': self.FileMetaData.get('FiscalYear', None),
+                    'PeriodCode': self.FileMetaData.get('PeriodCode', None),
+                    'PeriodEndDate': self.ReportPeriodEndDate,
+                    'Name': 'Child,Total', 
+                    'Value': total_child
+        }
+
+        trend_data[1] = {
+                    'DataSourceType': self.FileMetaData.get('DataSourceType', None),
+                    'StateNationalCode': self.FileMetaData.get('StateNationalCode', None),
+                    'StateCode': self.FileMetaData.get('StateCode', None),
+                    'FiscalYear': self.FileMetaData.get('FiscalYear', None),
+                    'PeriodCode': self.FileMetaData.get('PeriodCode', None),
+                    'PeriodEndDate': self.ReportPeriodEndDate,
+                    'Name': 'Child,Unique', 
+                    'Value': unique_child
+        }
+
+        trend_data[2] = {
+                    'DataSourceType': self.FileMetaData.get('DataSourceType', None),
+                    'StateNationalCode': self.FileMetaData.get('StateNationalCode', None),
+                    'StateCode': self.FileMetaData.get('StateCode', None),
+                    'FiscalYear': self.FileMetaData.get('FiscalYear', None),
+                    'PeriodCode': self.FileMetaData.get('PeriodCode', None),
+                    'PeriodEndDate': self.ReportPeriodEndDate,
+                    'Name': 'Substantiated,Unique', 
+                    'Value': len(victims)
+        }
+        #write
+        self.WriteStoreMeasures(trend_data, '12M')
+
     @property
     def NcandsNullIntType(self):
         return ['ChSex', 'RptVictim', 'SubYr']
