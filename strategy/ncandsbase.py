@@ -51,9 +51,9 @@ class NcandsBase(FileBase):
             return -2
 
     def ApplyDefaultIntegerRule(self, fld, fieldValue):
-        return -2 if ( fieldValue == 99 and fld["Name"] not in ['ChAge', 'Per1Rel', 'Per2Rel'] ) or ( fieldValue == 9 and \
+        return -2 if ( fieldValue == 99 and fld["Name"] not in ['ChAge', 'RptSrc', 'RptDisp', 'Per1Rel', 'Per2Rel', 'ChLvng'] ) or ( fieldValue == 9 and \
                             fld["Name"] not in [ 'ChSex', 'ChAge', 'Per1Age', 'Per2Age', 'Per3Age', 'RptSrc', 'Notifs', 'CEthn','ChLvng', 
-                                                'Per1Rel', 'Per2Rel', 'ChRacAI', 'ChRacAs', 'ChRacBl',  'ChRacNH', 'ChRacWh', 'ChRacUd',
+                                                'Per1Rel', 'Per2Rel', 'Per1Prnt', 'ChRacAI', 'ChRacAs', 'ChRacBl',  'ChRacNH', 'ChRacWh', 'ChRacUd',
                                                 'CdAlc', 'CdDrug', 'CdRtrd', 'CdEmotnl', 'CdVisual', 'CdLearn', 'CdPhys', 'CdBehav', 'CdMedicl' ] ) else fieldValue       
     # trasform data to output format
     def TransformData(self, deduped_data, output_map_file = "OutputMap\\NcandsStateConfig.json"):
