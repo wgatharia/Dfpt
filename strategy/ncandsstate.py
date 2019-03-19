@@ -46,7 +46,7 @@ class NcandsState(NcandsBase):
         
         file_data = {}
         #read source file
-        with open(self.concatString(self.FileMetaData.get('SourceFolder', None), file), mode="rt") as f:
+        with open(self.concatString(self.FileMetaData.get('SourceFolder', None), file), mode="rt", encoding="ANSI") as f:
             pos = 0
             output_line = 0
             for line in f:

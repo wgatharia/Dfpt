@@ -15,7 +15,7 @@ def get_state_jurisdiction_id_from_state_code(state_code):
     for jurisdiction in jurisdictions:
         if jurisdiction.get("JurisdictionCode", None) == state_code:
             return jurisdiction.get("JurisdictionId", None)
-    return "00000"
+    raise Exception("Invalid State Code {0}".format(state_code))
 
 #creates file metadata object
 def GetFileMetaData(fileToProcess):
@@ -62,29 +62,30 @@ def main(sourcePath):
                     start = datetime.datetime.now()
                     print("Start Processing ", file, " at " , start)
                     file_meta_data = GetFileMetaData(file)
-                    file_meta_data['SourceFolder'] = sourceFolder
-                    file_meta_data['ExportFolder'] = exportFolder
+                    if file_meta_data is not None:
+                        file_meta_data['SourceFolder'] = sourceFolder
+                        file_meta_data['ExportFolder'] = exportFolder
 
-                    file_type = file_meta_data.get('FileType', None)
+                        file_type = file_meta_data.get('FileType', None)
 
-                    if file_type == "AfcarsState":
-                        afcars = AfcarsState(**file_meta_data)
-                        afcars.ProcessFile(file)
-                    elif file_type == "AfcarsNational":
-                        afcars = AfcarsNational(**file_meta_data)
-                        afcars.ProcessFile(file)
-                    elif file_type == "NcandsState":
-                        ncands = NcandsState(**file_meta_data)
-                        ncands.ProcessFile(file)
-                    elif file_type == "NcandsNational":
-                        ncands = NcandsNational(**file_meta_data)
-                        ncands.ProcessFile(file)
-                    else:
-                        raise Exception("Unsupported file type.{0}".format(file_type))
-                    end = datetime.datetime.now()
-                    elapsed = end - start
-                    print("Completed Processing ", file, " at " , end)
-                    print("Processing took: ", elapsed)
+                        if file_type == "AfcarsState":
+                            afcars = AfcarsState(**file_meta_data)
+                            afcars.ProcessFile(file)
+                        elif file_type == "AfcarsNational":
+                            afcars = AfcarsNational(**file_meta_data)
+                            afcars.ProcessFile(file)
+                        elif file_type == "NcandsState":
+                            ncands = NcandsState(**file_meta_data)
+                            ncands.ProcessFile(file)
+                        elif file_type == "NcandsNational":
+                            ncands = NcandsNational(**file_meta_data)
+                            ncands.ProcessFile(file)
+                        else:
+                            raise Exception("Unsupported file type.{0}".format(file_type))
+                        end = datetime.datetime.now()
+                        elapsed = end - start
+                        print("Completed Processing ", file, " at " , end)
+                        print("Processing took: ", elapsed)
                 else:
                     print("Cannot process invalid file: ", file)
         else:

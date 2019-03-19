@@ -202,7 +202,68 @@ class AfcarsBase(FileBase):
         self.WriteColumnDistibutionsFile(string_distributions, "TS")
 
     def BuildPartitionedData(self, transformed):
-        return transformed["Output"]
+        output = transformed["Output"]
+        trend_source = {}
+
+        for key in output:
+            data = output.get(key, None)
+            if data is not None:
+                trend_source[key] = {
+                    'RecordID': data.get("RecordID", None),
+                    'DataSourceType': data.get("DataSourceType", None),
+                    'StateJurisdictionID': data.get("StateJurisdictionID", None),
+                    'StateNationalCode': data.get("StateNationalCode", None),
+                    'FiscalYear': data.get("FiscalYear", None),
+                    'PeriodCode': data.get("PeriodCode", None),
+                    'REPDATYR': data.get("REPDATYR", None),
+                    'REPDATMO': data.get("REPDATMO", None),
+                    'FIPSCODE': data.get("FIPSCODE", None),
+                    'STATE': data.get("STATE", None),
+                    'NUMPLEP': data.get("NUMPLEP", None),
+                    'DQ_DOBgtDtLatRem': data.get("DQ_DOBgtDtLatRem", None),
+                    'DQ_missDOB': data.get("DQ_missDOB", None),
+                    'DQ_DOBgtDtDisch': data.get("DQ_DOBgtDtDisch", None),
+                    'DQ_DtDischEqDtLatRem': data.get("DQ_DtDischEqDtLatRem", None),
+                    'DQ_DtDischLtDtLatRem': data.get("DQ_DtDischLtDtLatRem", None),
+                    'DQ_gt21DOBtoDtDisch': data.get("DQ_gt21DOBtoDtDisch", None),
+                    'DQ_gt21DOBtoDtLatRem': data.get("DQ_gt21DOBtoDtLatRem", None),
+                    'DQ_missDisreasn': data.get("DQ_missDisreasn", None),
+                    'DQ_missDoDFCDt': data.get("DQ_missDoDFCDt", None),
+                    'DQ_missNumPlep': data.get("DQ_missNumPlep", None),
+                    'DQ_totalrem1': data.get("DQ_totalrem1", None),
+                    'DQ_missDtLatRem': data.get("DQ_missDtLatRem", None),
+                    'DQ_gt21DtDischtoDtLatRem': data.get("DQ_gt21DtDischtoDtLatRem", None),
+                    'DQ_ExitDISREASN': data.get("DQ_ExitDISREASN", None),
+                    'DQ_InCareU18CASEGOAL': data.get("DQ_InCareU18CASEGOAL", None),
+                    'DQ_InCareU18CURPLSET': data.get("DQ_InCareU18CURPLSET", None),
+                    'DOBAge': data.get("DOBAge", None),
+                    'SEX': data.get("SEX", None),
+                    'EVERADPT': data.get("EVERADPT", None),
+                    'DISREASN': data.get("DISREASN", None),
+                    'CURPLSET': data.get("CURPLSET", None),
+                    'PLACEOUT': data.get("PLACEOUT", None),
+                    'CASEGOAL': data.get("CASEGOAL", None),
+                    'FOSFAMST': data.get("FOSFAMST", None),
+                    'AGEADOPT': data.get("AGEADOPT", None),
+                    'AMIAKN': data.get("AMIAKN", None),
+                    'ASIAN': data.get("ASIAN", None),
+                    'BLKAFRAM': data.get("BLKAFRAM", None),
+                    'HAWAIIPI': data.get("HAWAIIPI", None),
+                    'WHITE': data.get("WHITE", None),
+                    'HISORGIN': data.get("HISORGIN", None),
+                    'UNTODETM': data.get("UNTODETM", None),
+                    'CLINDIS': data.get("CLINDIS", None),
+                    'MR': data.get("MR", None),
+                    'VISHEAR': data.get("VISHEAR", None),
+                    'PHYDIS': data.get("PHYDIS", None),
+                    'DSMIII': data.get("DSMIII", None),
+                    'OTHERMED': data.get("OTHERMED", None),
+                    'MonthsSinceRem1Dt': data.get("MonthsSinceRem1Dt", None),
+                    'MonthsInFosterCare': data.get("MonthsInFosterCare", None),
+                    'MonthsSinceLatRmDt': data.get("MonthsSinceLatRmDt", None),
+                    'MonthsSinceCurSetDt': data.get("MonthsSinceCurSetDt", None),
+                }
+        return trend_source
 
     def CalculateInCareCounts(self, partitioned, age=None):
         #define locals to use for calculating counts

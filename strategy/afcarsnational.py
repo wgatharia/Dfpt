@@ -13,7 +13,7 @@ class AfcarsNational(AfcarsBase):
                 print(e)  
     def ProcessFile(self, file):
         file_data = {}
-        with open(self.concatString(self.FileMetaData.get('SourceFolder', None), file), mode="rt") as csv_file:
+        with open(self.concatString(self.FileMetaData.get('SourceFolder', None), file), mode="rt", encoding="ANSI") as csv_file:
             output_line = 0
             csv_reader = csv.DictReader(csv_file, delimiter=',')
             for line in csv_reader:
