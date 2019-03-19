@@ -14,7 +14,7 @@ class NcandsNational(NcandsBase):
     def ProcessFile(self, file):
         print('Processing: %s' % (file))
         file_data = {}
-        with open(self.concatString(self.FileMetaData.get('SourceFolder', None), file), mode="rt", encoding="ANSI") as csv_file:
+        with open(self.concatString(self.FileMetaData.get('SourceFolder', None), file), mode="rt", encoding=self.DefaultEncoding) as csv_file:
             output_line = 0
             csv_reader = csv.DictReader(csv_file, delimiter=',')
             for line in csv_reader:
@@ -73,12 +73,10 @@ class NcandsNational(NcandsBase):
         for field in self.Ncands_DQ_Columns:
             d[field] = self.GetNcandsDQ(field, d)
         #add  missing
-            d["ChBdate"] = None
-            d["IncidDt"] = None
-            d["RptDispDt"] = None
-            d["SuprvID"] = None
-            d["WrkrID"] = None
-            d["RptCnty"] = self.GetRptCnty(line["RptCnty"])
+        for field in ['ChBdate', 'IncidDt', 'RptDispDt', 'SuprvID', 'WrkrID']:
+            if d.get(field, None) is None:
+                d[field] = None    
+        d["RptCnty"] = self.GetRptCnty(line["RptCnty"])
         #add RptVictim
         d["RptVictim"] =  1 if d.get("MalDeath", None) == 1 or d.get("Mal1Lev", None) in [1, 2, 3] or d.get("Mal2Lev") in [1, 2, 3]or d.get("Mal3Lev") in [1, 2, 3] or d.get("Mal4Lev") in [1, 2, 3] else 0
         return d

@@ -91,6 +91,10 @@ class FileBase(ABC):
     def StateJurisdictionID(self, state_jurisdiction_id):
         self._state_jurisdiction_id = state_jurisdiction_id
     
+    @property
+    def DefaultEncoding(self):
+        return "ANSI"
+
     #This method builds files statistics
     def BuildStatistics(self, source_data, statistics_config_file):
         file_statistics = {}
